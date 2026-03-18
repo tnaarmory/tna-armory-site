@@ -54,11 +54,10 @@ const services = [
   "Defensive Equipment",
 ];
 
-const gallery = [
+const gallery: { name: string; image: string }[] = [
   {
     name: "Store Interior",
-    image:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/618145546_871649078992280_2140925557568761706_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=7b2446&_nc_ohc=QpUkFYHcU0MQ7kNvwE7SMqG&_nc_oc=AdkMnS5yuO4-PqdINOSC-JQ3WvvgReAfsZtST_tVVWqH6JBrct5GOxcYakRRyREiAYwsdZI04b6ImfG_4EXuQaJ3&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=8nu8qeggvYyyWPUgwlTIFw&_nc_ss=8&oh=00_AfzC2Nn7xyQOnshm5K06iAa48uGu4uAv-R18nVa5h43qPg&oe=69BB99BA",
+    image: "public/tna-armory-logo-web-transparent-removebg-preview.png",
   },
   {
     name: "Featured Firearms",
