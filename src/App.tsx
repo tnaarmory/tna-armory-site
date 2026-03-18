@@ -6,7 +6,7 @@ const headerLogo =
   "https://th.bing.com/th/id/OIP.D0ASJWRsTOhz4imCJIymaQAAAA?w=145&h=150&c=7&r=0&o=7&pid=1.7&rm=3";
 
 const heroLogo =
-  "https://scontent-lax7-1.xx.fbcdn.net/v/t39.30808-6/651240202_917169914440196_3442801149755045951_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=Z8RQVtj5J2UQ7kNvwEeq-Xo&_nc_oc=Adkwk6SBlWhQPCFhD7GZGzTaSqQPs2X14kLugIyu4RlPEgWpfShLqMz1Xot2jYzp8yWisrX0SiX9NXyttzFtbhpf&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PRKyUAAk1keuHDf_Ao8MSA&_nc_ss=8&oh=00_AfywMpy5bSE7kosSW4w0VeX2jADR3k3GkV7l1QrAL-DJ_w&oe=69BB9E8D";
+  "/tna-armory-logo-web-transparent-removebg-preview.png";
 
 const partners = [
   {
@@ -57,17 +57,18 @@ const services = [
 const gallery: { name: string; image: string }[] = [
   {
     name: "Store Interior",
-    image: "public/tna-armory-logo-web-transparent-removebg-preview.png",
+    image:
+      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/616798826_871649022325619_8522149394657797721_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=JnsIwKy3qoUQ7kNvwFkPeCv&_nc_oc=AdmronFIduy3e9bIxEFF29_UJMEldPmp14NAx8oykHqTVXJ3_2K7Ky4E306N_W2iDXI&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=eT8nNT_B4S-xTwkbvBuboQ&_nc_ss=8&oh=00_AfyHw_Fm8PcsJO2ehT2mRFGpIwZZBELy_Dve182oxevTzw&oe=69BFBABA",
   },
   {
     name: "Featured Firearms",
     image:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/616795364_871649138992274_4302671560769065974_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_ohc=V0h5FMAtYlkQ7kNvwGQZCj5&_nc_oc=AdmJhUH9SgKRJUmS92YY9XPD3PBbnIMaluNVnXGq_1mnnfHN2thnsRkT7L9BCWMPS9O3VHD67pDC9fk8aWSkwe1V&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=cwmUza0yposiJdWakV8O4w&_nc_ss=8&oh=00_AfxTrzEsh4IX8Buo-HNMIePBHr8L93-9ifOidzvIQGGI_g&oe=69BB8631",
+      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/616795364_871649138992274_4302671560769065974_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_ohc=PfwS7qRMeDgQ7kNvwGmNi07&_nc_oc=Adk_TazlyAyiHFcM3QeopHr4FFJ5pIoaY3A9Xrbwp759uTsxYBAyf12VBsxKtEl2hxQ&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=KxNM31FFYOYX4MLnszeHug&_nc_ss=8&oh=00_Afw6d89kNLJVDM1hCEGBDyXdMTXjCaBZpWrpRyVz6iTB9A&oe=69BFEB31",
   },
   {
     name: "Tactical Gear Display",
     image:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/616798826_871649022325619_8522149394657797721_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=YTc4RaMMoDEQ7kNvwEvHG5h&_nc_oc=Adl37JV6-64OaHwsrTvhs3XtFydTUeWUCNIcoYV9kBwku9w6mWlUroLWLhUdWX8NyXWS3qzuYR1PD9SNK5WcAI4i&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=IVeGurKMZs2A9tRcBRiweg&_nc_ss=8&oh=00_Afx_fSfsvh_O-4MtmT5ybCqcLLs9Mjef1uZS4gVN_oMtlA&oe=69BB8DFA",
+      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/618145546_871649078992280_2140925557568761706_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=7b2446&_nc_ohc=TSFj2AVKgp0Q7kNvwH7YRVV&_nc_oc=AdmZq8jrG9Rgn2DujDbfmQ8LK56CwssWFfgURaKmz78NGsjc9sBucxqBU4CiYKyJ-Vg&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=YLeLtxr-UojyKdGIkLACew&_nc_ss=8&oh=00_AfyM8SPk-bZNOusLPy5WIR_GyZHKrURhUkDU5e-ohyJoqA&oe=69BFC67A",
   },
 ];
 
@@ -138,7 +139,7 @@ function TnaArmoryWebsite() {
   const [ageVerified, setAgeVerified] = useState(false);
 
   useEffect(() => {
-    const move = (e: MouseEvent) => setCursor({ x: e.clientX, y: e.clientY });
+    const move = (e: globalThis.MouseEvent) => setCursor({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
   }, []);
