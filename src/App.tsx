@@ -5,8 +5,7 @@ const tacticalFont = '"Teko", "Bebas Neue", sans-serif';
 const headerLogo =
   "https://th.bing.com/th/id/OIP.D0ASJWRsTOhz4imCJIymaQAAAA?w=145&h=150&c=7&r=0&o=7&pid=1.7&rm=3";
 
-const heroLogo =
-  "/tna-armory-logo-web-transparent-removebg-preview.png";
+const heroLogo = "/tna-armory-logo-web-transparent-removebg-preview.png";
 
 const partners = [
   {
@@ -57,70 +56,67 @@ const services = [
 const gallery: { name: string; image: string }[] = [
   {
     name: "Store Interior",
-    image:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/616798826_871649022325619_8522149394657797721_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=JnsIwKy3qoUQ7kNvwFkPeCv&_nc_oc=AdmronFIduy3e9bIxEFF29_UJMEldPmp14NAx8oykHqTVXJ3_2K7Ky4E306N_W2iDXI&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=eT8nNT_B4S-xTwkbvBuboQ&_nc_ss=8&oh=00_AfyHw_Fm8PcsJO2ehT2mRFGpIwZZBELy_Dve182oxevTzw&oe=69BFBABA",
+    image: "public/inside.jpg",
   },
   {
     name: "Featured Firearms",
-    image:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/616795364_871649138992274_4302671560769065974_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_ohc=PfwS7qRMeDgQ7kNvwGmNi07&_nc_oc=Adk_TazlyAyiHFcM3QeopHr4FFJ5pIoaY3A9Xrbwp759uTsxYBAyf12VBsxKtEl2hxQ&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=KxNM31FFYOYX4MLnszeHug&_nc_ss=8&oh=00_Afw6d89kNLJVDM1hCEGBDyXdMTXjCaBZpWrpRyVz6iTB9A&oe=69BFEB31",
+    image: "public/featured firearms.jpg",
   },
   {
     name: "Tactical Gear Display",
-    image:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/618145546_871649078992280_2140925557568761706_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=7b2446&_nc_ohc=TSFj2AVKgp0Q7kNvwH7YRVV&_nc_oc=AdmZq8jrG9Rgn2DujDbfmQ8LK56CwssWFfgURaKmz78NGsjc9sBucxqBU4CiYKyJ-Vg&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=YLeLtxr-UojyKdGIkLACew&_nc_ss=8&oh=00_AfyM8SPk-bZNOusLPy5WIR_GyZHKrURhUkDU5e-ohyJoqA&oe=69BFC67A",
+    image: "public/tactical display.jpg",
   },
 ];
 
 const storefrontPhoto =
-  "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/651683729_917195081104346_3880892189148724836_n.jpg?stp=cp6_dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_ohc=UTmLOhhLQcYQ7kNvwG3xceb&_nc_oc=Adl9UYmGXN8rWLljZeW7czxA55UIXmiq6a6HI9thDmPFiwp7qmXdhsxDbdro3K0Ucbw&_nc_zt=23&se=-1&_nc_ht=scontent-lax3-2.xx&_nc_gid=1-BoKsOGg0oi5fse5EJxcw&_nc_ss=8&oh=00_AfzVE3J4yVwMnVvsZDI63paIo7Asjg-8tTvDWpUGRKklfQ&oe=69BBDE02";
+  "public/store front.jpg";
 
 const merch = [
   {
-    name: "T&A Armory Merch 1",
+    name: "Hoodie",
     image:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/651205593_917169887773532_8711669737226476875_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=tMbj88d4NosQ7kNvwH8GEWV&_nc_oc=AdncC9ZG2o9563vWSuf5wg3pLYcKJWRZSqfOdzWG_Iw8S5tmlr242vrchH5yVGOgRzqJj8KLb0fmL6C3C_Sag0sd&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=0UZ_rP8MVD3PG-LZInY0lg&_nc_ss=8&oh=00_Afx24DedodfdMCAPOkb4ml5_ddu9Ou5iliQ_CRTDSflSnA&oe=69BBBABB",
+      "public/hoodie.jpg",
   },
   {
-    name: "T&A Armory Merch 2",
+    name: "Shirt",
     image:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/653056133_917169891106865_6658289749859408526_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=rj5X3xJmAToQ7kNvwFDztg-&_nc_oc=AdkeL4CXq6uw-s6CDOLo0wbZDK0fDgZO9qORaTd1Oe0jGXB0_iVDkJ-tSh73YAn30KSsgJKvPD4xEyPxzQsH9_2L&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=0UZ_rP8MVD3PG-LZInY0lg&_nc_ss=8&oh=00_Afyfj-wrNIQb_KSwkuAmJ499TcepgbYVrGtRtNccipXLKA&oe=69BBB267",
+      "public/shirt.jpg",
   },
   {
-    name: "T&A Armory Merch 3",
+    name: "Hat",
     image:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/651216988_917170014440186_6119381300341536833_n.jpg?stp=cp6_dst-jpegr_s590x590_tt6&_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=RXpySydYeoQQ7kNvwHWXpk3&_nc_oc=AdlbGwq03hzMYhJsCPonXDofP5wYod9EU7jZGU6iViSJBqeUALitoDr4gR458Zm_f5asJDmeU-Uk3DiwJSmtdFph&_nc_zt=23&se=-1&_nc_ht=scontent-lax3-1.xx&_nc_gid=0UZ_rP8MVD3PG-LZInY0lg&_nc_ss=8&oh=00_AfxJo2TI57TqeB1gyhz8WvIDJMlSfy3jj6Z8AJ0_9skHeQ&oe=69BBC2AD",
+      "public/hat.jpg",
   },
   {
-    name: "T&A Armory Merch 4",
+    name: "Patch on Vest",
     image:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/652369752_917170044440183_343722246834080975_n.jpg?stp=cp6_dst-jpegr_s590x590_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=yqO3TJZPN80Q7kNvwEGejKK&_nc_oc=Adn9I_buV3sk0pBjltwW08PJfPO_qM1UQsVYds_Jmhcrq-i_SEswCWHnE65Vq0kJgHrFphm2Kf3y1IGyv_DztnDm&_nc_zt=23&se=-1&_nc_ht=scontent-lax3-2.xx&_nc_gid=0UZ_rP8MVD3PG-LZInY0lg&_nc_ss=8&oh=00_Afyhrg2KjZfRCA8tLd3giZ9Qh2UH_hodned_z7N4vMPMlA&oe=69BBC05D",
+      "public/patch.jpg",
   },
   {
-    name: "T&A Armory Merch 5",
+    name: "Gun Box",
     image:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/651216942_917170067773514_7374034599756752864_n.jpg?stp=cp6_dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=OGDZcC8Dpe0Q7kNvwGuYd0E&_nc_oc=AdmsKll8Knofv7uIaDWnNinlSSwo7wBmGT-izob8Kkeke7nXsKUJ-V-yCuVgPhy3UVaUvOrqIVH__J-HvQJh24N4&_nc_zt=23&se=-1&_nc_ht=scontent-lax3-2.xx&_nc_gid=xqx5p7guoiN0JV5AEzT0sA&_nc_ss=8&oh=00_AfxmB9BI2T2Jivn7dwu7VNVGig_IRbucz_DakU4Ks0I6EQ&oe=69BB9FA1",
+      "public/box.jpg",
   },
   {
-    name: "T&A Armory Merch 6",
+    name: "T&A Armory Truck",
     image:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/650197900_917170071106847_5351405840160329410_n.jpg?stp=cp6_dst-jpegr_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=Muv-T8V6asMQ7kNvwH5Mj92&_nc_oc=AdlnMt1R6PAx2867PFTntThAtqcjz9ZCG0jzGUgtwTPd7qYViouSOVeVeMZiMZ49zeZcLTMdFFFIjxDqULbowroz&_nc_zt=23&se=-1&_nc_ht=scontent-lax3-1.xx&_nc_gid=V-vyjRpGdSKEyctvFf_cPg&_nc_ss=8&oh=00_AfwGGu4TaSdV2pfgNyDIlzy6Oh7xuikBFyxLLFlMMsEQWQ&oe=69BBAB4B",
+      "public/truck.jpg",
   },
 ];
 
 const reviews = [
   {
-    name: "Local Customer",
+    name: "Stew",
     text: "Great customer service and a solid tactical selection.",
     rating: 5,
   },
   {
-    name: "Shop Visitor",
+    name: "Nick",
     text: "Helpful, knowledgeable, and easy to work with.",
     rating: 5,
   },
   {
-    name: "Ridgecrest Buyer",
+    name: "Amber",
     text: "Clean store, great gear, and friendly staff.",
     rating: 5,
   },
@@ -134,15 +130,51 @@ const hours = [
 
 const address = ["1615 N Down Suite B", "Ridgecrest, CA 93555"];
 
+const currentGuns = [
+  { name: "Tisas PX-9", price: "$690", image: "public/tisas.png" },
+  { name: "PSA AR15", price: "$1050", image: "public/psa 2.png" },
+  { name: "Canik Mete MC9 Prime", price: "$700", image: "public/prime 2.png" },
+  { name: "Remington 1100", price: "$720", image: "public/1100 2.png" },
+  { name: "Taurus 856", price: "$450", image: "public/856 2.png" },
+  { name: "Ruger 10/22", price: "$400", image: "public/1022 2.png" },
+  { name: "Smith & Wesson 1950", price: "$1750", image: "public/1950 2.png" },
+  { name: "Anschutz 64", price: "$950", image: "public/64 2.png" },
+  { name: "Smith & Wesson k22", price: "$712", image: "public/k22 2.png" },
+  { name: "Pedersoli 1854", price: "$1650", image: "public/1874 2.png" },
+  { name: "Smith & Wesson 25-2", price: "$1162", image: "public/25-2 2.png" },
+  { name: "Smith & Wesson 35-1", price: "$1051", image: "public/35-1 2.png" },
+];
+
 function TnaArmoryWebsite() {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [ageVerified, setAgeVerified] = useState(false);
+  const [selectedGun, setSelectedGun] = useState<string | null>(null);
+  const [inquiryName, setInquiryName] = useState("");
+  const [inquiryPhone, setInquiryPhone] = useState("");
+  const [inquiryEmail, setInquiryEmail] = useState("");
 
   useEffect(() => {
     const move = (e: globalThis.MouseEvent) => setCursor({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
   }, []);
+
+  const closeInquiry = () => {
+    setSelectedGun(null);
+    setInquiryName("");
+    setInquiryPhone("");
+    setInquiryEmail("");
+  };
+
+  const inquirySubject = selectedGun
+    ? `Gun Inquiry - ${selectedGun}`
+    : "Gun Inquiry";
+
+  const inquiryBody = `Name: ${inquiryName}%0D%0APhone: ${inquiryPhone}%0D%0AEmail: ${inquiryEmail}%0D%0AGun: ${selectedGun ?? ""}%0D%0A%0D%0AInquiry from website:`;
+
+  
+
+  
 
   return (
     <>
@@ -178,6 +210,103 @@ function TnaArmoryWebsite() {
       )}
 
       <div style={{ fontFamily: tacticalFont }} className="min-h-screen bg-[#1c2518] text-[#f6f1e4]">
+        {selectedGun && (
+          <div className="fixed inset-0 z-[210] flex items-center justify-center bg-black/80 px-4 backdrop-blur-sm">
+            <div className="w-full max-w-2xl rounded-[1.75rem] border border-white/10 bg-[#10150e] p-6 shadow-2xl shadow-black/40 sm:p-8">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+                    Inquire About This Gun
+                  </div>
+                  <h2 className="mt-2 text-3xl font-black uppercase tracking-[-0.04em] text-white sm:text-4xl">
+                    {selectedGun}
+                  </h2>
+                </div>
+                <button
+                  type="button"
+                  onClick={closeInquiry}
+                  className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-black uppercase tracking-[0.1em] text-white hover:bg-white/10"
+                >
+                  Close
+                </button>
+              </div>
+
+              <div className="mt-6 grid gap-4">
+                <input
+                  type="text"
+                  value={inquiryName}
+                  onChange={(e) => setInquiryName(e.target.value)}
+                  placeholder="Your Name"
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
+                />
+                <input
+                  type="tel"
+                  value={inquiryPhone}
+                  onChange={(e) => setInquiryPhone(e.target.value)}
+                  placeholder="Phone Number"
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
+                />
+                <input
+                  type="email"
+                  value={inquiryEmail}
+                  onChange={(e) => setInquiryEmail(e.target.value)}
+                  placeholder="Email Address"
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
+                />
+              </div>
+
+              <form
+                action="https://formsubmit.co/info@tnaarmory.com"
+                method="POST"
+                className="mt-6 grid gap-4"
+              >
+                <input type="hidden" name="_subject" value={`Gun Inquiry - ${selectedGun}`} />
+                <input type="hidden" name="gun" value={selectedGun ?? ""} />
+
+                <input
+                  type="text"
+                  name="name"
+                  value={inquiryName}
+                  onChange={(e) => setInquiryName(e.target.value)}
+                  placeholder="Your Name"
+                  required
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                />
+
+                <input
+                  type="tel"
+                  name="phone"
+                  value={inquiryPhone}
+                  onChange={(e) => setInquiryPhone(e.target.value)}
+                  placeholder="Phone Number"
+                  required
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  value={inquiryEmail}
+                  onChange={(e) => setInquiryEmail(e.target.value)}
+                  placeholder="Email Address"
+                  required
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                />
+
+                <button
+                  type="submit"
+                  className="rounded-xl bg-[#e6cf86] px-6 py-3 text-sm font-black uppercase tracking-[0.1em] text-black hover:brightness-110"
+                >
+                  Send Inquiry
+                </button>
+              </form>
+
+              <p className="mt-4 text-sm leading-6 text-[#d5d9c2]">
+                This sends directly to info@tnaarmory.com from your website.
+              </p>
+            </div>
+          </div>
+        )}
         <style>{`
           @keyframes dealer-scroll {
             0% { transform: translateX(0); }
@@ -226,6 +355,7 @@ function TnaArmoryWebsite() {
               <a href="#gallery" className="hover:text-white">Gallery</a>
               <a href="#merch" className="hover:text-white">Merch</a>
               <a href="#reviews" className="hover:text-white">Reviews</a>
+              <a href="#current-guns" className="hover:text-white">Current Guns</a>
               <a href="#gunsmith" className="hover:text-white">Gunsmith</a>
               <a href="#contact" className="hover:text-white">Contact</a>
             </nav>
@@ -270,7 +400,13 @@ function TnaArmoryWebsite() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {["Veteran Owned", "Authorized Dealers", "Transfers Available", "Tactical Gear", "Ridgecrest, CA"].map((badge) => (
+                  {[
+                    "Veteran Owned",
+                    "Authorized Dealers",
+                    "Transfers Available",
+                    "Tactical Gear",
+                    "Ridgecrest, CA",
+                  ].map((badge) => (
                     <div
                       key={badge}
                       className="rounded-full border border-[#e6cf86]/25 bg-[#151d13] px-3 py-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#f1d98d]"
@@ -463,6 +599,56 @@ function TnaArmoryWebsite() {
                     <div className="text-lg text-[#efe2ae]">{"★".repeat(review.rating)}</div>
                     <div className="mt-4 text-base leading-7 text-[#f1edde]">{review.text}</div>
                     <div className="mt-5 text-sm font-black uppercase tracking-[0.08em] text-[#d7ddc7]">{review.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="current-guns" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+                    In Stock Now
+                  </div>
+                  <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
+                    Current Guns
+                  </h2>
+                </div>
+                <p className="max-w-xl text-sm leading-6 text-[#d5d9c2] sm:text-base">
+                  Add your current in-stock firearms here with a picture and price for each one.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 sm:gap-6">
+                {currentGuns.map((gun, index) => (
+                  <div
+                    key={`${gun.name}-${index}`}
+                    className="overflow-hidden rounded-2xl border border-white/10 bg-[#263420]"
+                  >
+                    <div className="h-64 overflow-hidden bg-black/25">
+                      <img
+                        src={gun.image}
+                        alt={gun.name}
+                        className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-5 text-center">
+                      <div className="text-base font-black uppercase tracking-[0.08em] sm:text-lg">
+                        {gun.name}
+                      </div>
+                      <div className="mt-2 text-2xl font-black text-[#e6cf86]">
+                        {gun.price}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setSelectedGun(gun.name)}
+                        className="mt-4 rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-white/15"
+                      >
+                        Make Inquiry
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
