@@ -166,9 +166,7 @@ function TnaArmoryWebsite() {
     setInquiryEmail("");
   };
 
-  const inquirySubject = selectedGun
-    ? `Gun Inquiry - ${selectedGun}`
-    : "Gun Inquiry";
+  const inquirySubject = selectedGun ? `Gun Inquiry - ${selectedGun}` : "Gun Inquiry";
 
   const inquiryBody = `Name: ${inquiryName}%0D%0APhone: ${inquiryPhone}%0D%0AEmail: ${inquiryEmail}%0D%0AGun: ${selectedGun ?? ""}%0D%0A%0D%0AInquiry from website:`;
 
