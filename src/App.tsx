@@ -131,18 +131,18 @@ const hours = [
 const address = ["1615 N Down Suite B", "Ridgecrest, CA 93555"];
 
 const currentGuns = [
-  { name: "Tisas PX-9", price: "$690", image: "public/tisas.png" },
-  { name: "PSA AR15", price: "$1050", image: "public/psa 2.png" },
-  { name: "Canik Mete MC9 Prime", price: "$700", image: "public/prime 2.png" },
-  { name: "Remington 1100", price: "$720", image: "public/1100 2.png" },
-  { name: "Taurus 856", price: "$450", image: "public/856 2.png" },
-  { name: "Ruger 10/22", price: "$400", image: "public/1022 2.png" },
-  { name: "Smith & Wesson 1950", price: "$1750", image: "public/1950 2.png" },
-  { name: "Anschutz 64", price: "$950", image: "public/64 2.png" },
-  { name: "Smith & Wesson k22", price: "$712", image: "public/k22 2.png" },
-  { name: "Pedersoli 1854", price: "$1650", image: "public/1874 2.png" },
-  { name: "Smith & Wesson 25-2", price: "$1162", image: "public/25-2 2.png" },
-  { name: "Smith & Wesson 35-1", price: "$1051", image: "public/35-1 2.png" },
+  { name: "Tisas PX-9", price: "$690", image: "/tisas.png" },
+  { name: "PSA AR15", price: "$1050", image: "/psa 2.png" },
+  { name: "Canik Mete MC9 Prime", price: "$700", image: "/prime 2.png" },
+  { name: "Remington 1100", price: "$720", image: "/1100 2.png" },
+  { name: "Taurus 856", price: "$450", image: "/856 2.png" },
+  { name: "Ruger 10/22", price: "$400", image: "/1022 2.png" },
+  { name: "Smith & Wesson 1950", price: "$1750", image: "/1950 2.png" },
+  { name: "Anschutz 64", price: "$950", image: "/64 2.png" },
+  { name: "Smith & Wesson k22", price: "$712", image: "/k22 2.png" },
+  { name: "Pedersoli 1854", price: "$1650", image: "/1874 2.png" },
+  { name: "Smith & Wesson 25-2", price: "$1162", image: "/25-2 2.png" },
+  { name: "Smith & Wesson 35-1", price: "$1051", image: "/35-1 2.png" },
 ];
 
 function TnaArmoryWebsite() {
