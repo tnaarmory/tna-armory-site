@@ -56,51 +56,51 @@ const services = [
 const gallery: { name: string; image: string }[] = [
   {
     name: "Store Interior",
-    image: "public/inside.jpg",
+    image: "/inside.jpg",
   },
   {
     name: "Featured Firearms",
-    image: "public/featured firearms.jpg",
+    image: "/featured firearms.jpg",
   },
   {
     name: "Tactical Gear Display",
-    image: "public/tactical display.jpg",
+    image: "/tactical display.jpg",
   },
 ];
 
 const storefrontPhoto =
-  "public/store front.jpg";
+  "/store front.jpg";
 
 const merch = [
   {
     name: "Hoodie",
     image:
-      "public/hoodie.jpg",
+      "/hoodie.jpg",
   },
   {
     name: "Shirt",
     image:
-      "public/shirt.jpg",
+      "/shirt.jpg",
   },
   {
     name: "Hat",
     image:
-      "public/hat.jpg",
+      "/hat.jpg",
   },
   {
     name: "Patch on Vest",
     image:
-      "public/patch.jpg",
+      "/patch.jpg",
   },
   {
     name: "Gun Box",
     image:
-      "public/box.jpg",
+      "/box.jpg",
   },
   {
     name: "T&A Armory Truck",
     image:
-      "public/truck.jpg",
+      "/truck.jpg",
   },
 ];
 
