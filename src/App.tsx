@@ -131,19 +131,29 @@ const hours = [
 const address = ["1615 N Down Suite B", "Ridgecrest, CA 93555"];
 
 const currentGuns = [
-  { name: "Tisas", price: "$SOLD", image: "/tisas.png" },
+  { name: "Tisas", price: "SOLD", image: "/tisas.png" },
   { name: "PSA AR15", price: "$1050", image: "/psa 2.png" },
   { name: "Canik Mete MC9 Prime", price: "$700", image: "/prime 2.png" },
   { name: "Remington 1100", price: "$720", image: "/1100 2.png" },
   { name: "Taurus 856", price: "$450", image: "/856 2.png" },
   { name: "Ruger 10/22", price: "$400", image: "/1022 2.png" },
-  { name: "Smith & Wesson 1950", price: "$1750", image: "/1950 2.png" },
+  { name: "Smith & Wesson 1950", price: "Sold", image: "/1950 2.png" },
   { name: "Anschutz 64", price: "$950", image: "/64 2.png" },
   { name: "Smith & Wesson k22", price: "$712", image: "/k22 2.png" },
   { name: "Pedersoli 1854", price: "$1650", image: "/1874 2.png" },
   { name: "Smith & Wesson 25-2", price: "$1162", image: "/25-2 2.png" },
   { name: "Smith & Wesson 35-1", price: "$1051", image: "/35-1 2.png" },
 ];
+
+const upcomingEvent = {
+  title: "Ridgecrest Friends of the NRA Dinner",
+  date: "April 11, 2026",
+  time: "5:00 PM",
+  location: "Kerr McGee Center",
+  address: "100 W California Ave, Ridgecrest, CA 93555",
+  rsvpUrl: "https://www.friendsofnra.org/events/event-details?eventId=61679",
+  flyerImage: "/2026 NRA dinner.jpg",
+};
 
 function TnaArmoryWebsite() {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -152,12 +162,42 @@ function TnaArmoryWebsite() {
   const [inquiryName, setInquiryName] = useState("");
   const [inquiryPhone, setInquiryPhone] = useState("");
   const [inquiryEmail, setInquiryEmail] = useState("");
+  const [timeLeft, setTimeLeft] = useState({
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+});
 
   useEffect(() => {
     const move = (e: globalThis.MouseEvent) => setCursor({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
   }, []);
+  useEffect(() => {
+  const eventDate = new Date("2026-04-11T17:00:00");
+
+  const updateCountdown = () => {
+    const now = new Date();
+    const difference = eventDate.getTime() - now.getTime();
+
+    if (difference <= 0) {
+      setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      return;
+    }
+
+    setTimeLeft({
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    });
+  };
+
+  updateCountdown();
+  const interval = window.setInterval(updateCountdown, 1000);
+  return () => window.clearInterval(interval);
+}, []);
 
   const closeInquiry = () => {
     setSelectedGun(null);
@@ -355,6 +395,7 @@ function TnaArmoryWebsite() {
               <a href="#current-guns" className="hover:text-white">Current Guns</a>
               <a href="#gunsmith" className="hover:text-white">Gunsmith</a>
               <a href="#contact" className="hover:text-white">Contact</a>
+              <a href="#event" className="hover:text-white">Event</a>
             </nav>
           </div>
         </header>
@@ -601,6 +642,77 @@ function TnaArmoryWebsite() {
               </div>
             </div>
           </section>
+
+          <section id="event" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+  <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
+    <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div>
+        <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+          Upcoming Event
+        </div>
+        <h2 className="mt-2 text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
+          {upcomingEvent.title}
+        </h2>
+
+        <div className="mt-6 space-y-3 text-[#f1edde]">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Date</span>
+            <div className="mt-1 text-xl font-black">{upcomingEvent.date}</div>
+          </div>
+          <div>
+            <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Time</span>
+            <div className="mt-1 text-xl font-black">{upcomingEvent.time}</div>
+          </div>
+          <div>
+            <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Location</span>
+            <div className="mt-1 text-xl font-black">{upcomingEvent.location}</div>
+            <div className="text-base text-[#d5d9c2]">{upcomingEvent.address}</div>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-4">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+            <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.days}</div>
+            <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Days</div>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+            <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.hours}</div>
+            <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Hours</div>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+            <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.minutes}</div>
+            <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Minutes</div>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+            <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.seconds}</div>
+            <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Seconds</div>
+          </div>
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href={upcomingEvent.rsvpUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl bg-[#e6cf86] px-6 py-3 text-sm font-black uppercase tracking-[0.1em] text-black transition hover:brightness-110"
+          >
+            RSVP
+          </a>
+        </div>
+      </div>
+
+      <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#11180f]">
+        <div className="flex min-h-[460px] items-center justify-center bg-black/20">
+          <img
+            src={upcomingEvent.flyerImage}
+            alt={`${upcomingEvent.title} flyer`}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
           <section id="current-guns" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
             <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
