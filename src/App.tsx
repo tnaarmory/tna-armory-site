@@ -69,7 +69,7 @@ const gallery: { name: string; image: string }[] = [
 ];
 
 const storefrontPhoto =
-  "/store front.jpg";
+  "/explorers.jpg";
 
 const merch = [
   {
@@ -143,6 +143,9 @@ const currentGuns = [
   { name: "Pedersoli 1854", price: "$1650", image: "/1874 2.png" },
   { name: "Smith & Wesson 25-2", price: "$1162", image: "/25-2 2.png" },
   { name: "Smith & Wesson 35-1", price: "$1051", image: "/35-1 2.png" },
+  { name: "Byrna SD", price: "$400", image: "/byrna sd.png" },
+  { name: "Byrna CL", price: "$550", image: "/Byrna CL.png" },
+  { name: "Byrna LE", price: "$500", image: "/byrna LE.png" },
 ];
 
 const upcomingEvent = {
