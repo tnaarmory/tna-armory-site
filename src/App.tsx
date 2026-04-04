@@ -131,7 +131,7 @@ const hours = [
 const address = ["1615 N Down Suite B", "Ridgecrest, CA 93555"];
 
 const currentGuns = [
-  { name: "Tisas", price: "SOLD", image: "/tisas.png" },
+  { name: "Rost Martin RM1S", price: "$550", image: "/rostmartin rm1s.png" },
   { name: "PSA AR15", price: "$1050", image: "/psa 2.png" },
   { name: "Canik Mete MC9 Prime", price: "$700", image: "/prime 2.png" },
   { name: "Remington 1100", price: "$720", image: "/1100 2.png" },
