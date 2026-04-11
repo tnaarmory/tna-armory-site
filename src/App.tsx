@@ -131,13 +131,13 @@ const hours = [
 const address = ["1615 N Down Suite B", "Ridgecrest, CA 93555"];
 
 const currentGuns = [
-  { name: "Rost Martin RM1S", price: "$550", image: "/rostmartin rm1s.png" },
+  { name: "Rost Martin RM1S", price: "$500", image: "/rostmartin rm1s.png" },
   { name: "PSA AR15", price: "$1050", image: "/psa 2.png" },
   { name: "Canik Mete MC9 Prime", price: "$700", image: "/prime 2.png" },
   { name: "Remington 1100", price: "$720", image: "/1100 2.png" },
   { name: "Taurus 856", price: "$450", image: "/856 2.png" },
   { name: "Ruger 10/22", price: "$400", image: "/1022 2.png" },
-  { name: "Smith & Wesson 1950", price: "Sold", image: "/1950 2.png" },
+  { name: "Sig Sauer P365", price: "$580", image: "/P365.png" },
   { name: "Anschutz 64", price: "$950", image: "/64 2.png" },
   { name: "Smith & Wesson k22", price: "$712", image: "/k22 2.png" },
   { name: "Pedersoli 1854", price: "$1650", image: "/1874 2.png" },
@@ -146,6 +146,11 @@ const currentGuns = [
   { name: "Byrna SD", price: "$400", image: "/byrna sd.png" },
   { name: "Byrna CL", price: "$550", image: "/Byrna CL.png" },
   { name: "Byrna LE", price: "$500", image: "/byrna LE.png" },
+  { name: "Smith & Wesson Shield", price: "$280", image: "/shield.png" },
+  { name: "Ruger Single Six", price: "$430", image: "/single six.png" },
+  { name: "Smith & Wesson 351C", price: "$540", image: "/351C.png" },
+  { name: "Ruger BlackHawk", price: "$650", image: "/blackhawk.png" },
+  { name: "Springfield M1 Garand", price: "SOLD", image: "/M1 Garand.png" },
 ];
 
 const upcomingEvent = {
