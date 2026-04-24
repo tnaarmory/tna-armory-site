@@ -56,54 +56,44 @@ const services = [
 const gallery: { name: string; image: string }[] = [
   {
     name: "Store Interior",
-    image:
-      "/inside.jpg",
+    image: "/inside.jpg",
   },
   {
     name: "Featured Firearms",
-    image:
-      "/featured firearms.jpg",
+    image: "/featured firearms.jpg",
   },
   {
     name: "Tactical Gear Display",
-    image:
-      "/tactical display.jpg",
+    image: "/tactical display.jpg",
   },
 ];
 
-const storefrontPhoto =
-  "/store front.jpg";
+const storefrontPhoto = "/store front.jpg";
 
 const merch = [
   {
     name: "Hoodies",
-    image:
-      "/hoodie.jpg",
+    image: "/hoodie.jpg",
   },
   {
     name: "Hats",
-    image:
-      "/hat.jpg",
+    image: "/hat.jpg",
   },
   {
     name: "Patches",
-    image:
-      "/patch.jpg",
+    image: "/patch.jpg",
   },
   {
     name: "Shirts",
-    image:
-      "/shirt.jpg",
+    image: "/shirt.jpg",
   },
   {
     name: "Gear Boxes",
-    image:
-      "/box.jpg",
+    image: "/box.jpg",
   },
   {
     name: "T&A Armory Truck",
-    image:
-      "/truck.jpg",
+    image: "/truck.jpg",
   },
 ];
 
@@ -171,6 +161,24 @@ const currentGunCategories = {
   ],
 };
 
+const categories = [
+  "Handguns",
+  "Revolvers",
+  "Rifles",
+  "Shotguns",
+  "LessLethal",
+] as const;
+
+type Category = typeof categories[number];
+
+const gunCategoryLabels: Record<Category, string> = {
+  Handguns: "Handguns",
+  Revolvers: "Revolvers",
+  Rifles: "Rifles",
+  Shotguns: "Shotguns",
+  LessLethal: "Less Lethal",
+};
+
 const upcomingEvent = {
   title: "Mental Wellness Group",
   date: "TBD",
@@ -185,7 +193,7 @@ function TnaArmoryWebsite() {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [ageVerified, setAgeVerified] = useState(false);
   const [page, setPage] = useState("home");
-  const [gunCategory, setGunCategory] = useState<keyof typeof currentGunCategories>("Handguns");
+  const [gunCategory, setGunCategory] = useState<Category>("Handguns");
   const [selectedGun, setSelectedGun] = useState<string | null>(null);
   const [inquiryName, setInquiryName] = useState("");
   const [inquiryPhone, setInquiryPhone] = useState("");
@@ -234,9 +242,9 @@ function TnaArmoryWebsite() {
     setInquiryEmail("");
   };
 
-  
-
-  
+  const openPage = (nextPage: string) => {
+    setPage(nextPage);
+  };
 
   return (
     <>
@@ -293,30 +301,6 @@ function TnaArmoryWebsite() {
                 </button>
               </div>
 
-              <div className="mt-6 grid gap-4">
-                <input
-                  type="text"
-                  value={inquiryName}
-                  onChange={(e) => setInquiryName(e.target.value)}
-                  placeholder="Your Name"
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
-                />
-                <input
-                  type="tel"
-                  value={inquiryPhone}
-                  onChange={(e) => setInquiryPhone(e.target.value)}
-                  placeholder="Phone Number"
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
-                />
-                <input
-                  type="email"
-                  value={inquiryEmail}
-                  onChange={(e) => setInquiryEmail(e.target.value)}
-                  placeholder="Email Address"
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
-                />
-              </div>
-
               <form
                 action="https://formsubmit.co/info@tnaarmory.com"
                 method="POST"
@@ -332,7 +316,7 @@ function TnaArmoryWebsite() {
                   onChange={(e) => setInquiryName(e.target.value)}
                   placeholder="Your Name"
                   required
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
                 />
 
                 <input
@@ -342,7 +326,7 @@ function TnaArmoryWebsite() {
                   onChange={(e) => setInquiryPhone(e.target.value)}
                   placeholder="Phone Number"
                   required
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
                 />
 
                 <input
@@ -352,7 +336,7 @@ function TnaArmoryWebsite() {
                   onChange={(e) => setInquiryEmail(e.target.value)}
                   placeholder="Email Address"
                   required
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white placeholder:text-white/40"
                 />
 
                 <button
@@ -411,520 +395,525 @@ function TnaArmoryWebsite() {
               </div>
             </div>
 
-            <nav className="hidden gap-5 text-xs font-bold uppercase tracking-[0.12em] text-[#e7e2d0] lg:flex">
-              <button type="button" onClick={() => setPage("home")} className="hover:text-white">Home</button>
-              <button type="button" onClick={() => setPage("services")} className="hover:text-white">Services</button>
-              <button type="button" onClick={() => setPage("gallery")} className="hover:text-white">Gallery</button>
-              <button type="button" onClick={() => setPage("merch")} className="hover:text-white">Merch</button>
-              <button type="button" onClick={() => setPage("reviews")} className="hover:text-white">Reviews</button>
-              <button type="button" onClick={() => setPage("event")} className="hover:text-white">Event</button>
-              <button type="button" onClick={() => setPage("currentGuns")} className="hover:text-white">Current Guns</button>
-              <button type="button" onClick={() => setPage("gunsmith")} className="hover:text-white">Gunsmith</button>
-              <button type="button" onClick={() => setPage("contact")} className="hover:text-white">Contact</button>
+            <nav className="hidden gap-5 text-xs font-bold uppercase tracking-[0.12em] text-[#e7e2d0] xl:flex">
+              <button type="button" onClick={() => openPage("home")} className="hover:text-white">Home</button>
+              <button type="button" onClick={() => openPage("services")} className="hover:text-white">Services</button>
+              <button type="button" onClick={() => openPage("gallery")} className="hover:text-white">Gallery</button>
+              <button type="button" onClick={() => openPage("merch")} className="hover:text-white">Merch</button>
+              <button type="button" onClick={() => openPage("reviews")} className="hover:text-white">Reviews</button>
+              <button type="button" onClick={() => openPage("event")} className="hover:text-white">Event</button>
+              <button type="button" onClick={() => openPage("currentGuns")} className="hover:text-white">Current Guns</button>
+              <button type="button" onClick={() => openPage("gunsmith")} className="hover:text-white">Gunsmith</button>
+              <button type="button" onClick={() => openPage("contact")} className="hover:text-white">Contact</button>
             </nav>
           </div>
+
+          <nav className="mx-auto flex max-w-7xl gap-3 overflow-x-auto border-t border-white/10 px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#e7e2d0] sm:px-6 xl:hidden">
+            <button type="button" onClick={() => openPage("home")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Home</button>
+            <button type="button" onClick={() => openPage("services")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Services</button>
+            <button type="button" onClick={() => openPage("gallery")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gallery</button>
+            <button type="button" onClick={() => openPage("merch")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Merch</button>
+            <button type="button" onClick={() => openPage("reviews")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Reviews</button>
+            <button type="button" onClick={() => openPage("event")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Event</button>
+            <button type="button" onClick={() => openPage("currentGuns")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Current Guns</button>
+            <button type="button" onClick={() => openPage("gunsmith")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gunsmith</button>
+            <button type="button" onClick={() => openPage("contact")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Contact</button>
+          </nav>
         </header>
 
         <main>
           {page === "home" && (
             <>
-          <section className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8">
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-              <img
-                src={heroLogo}
-                alt="T&A Armory background"
-                className="h-full max-h-[560px] w-full object-contain opacity-20 grayscale mix-blend-multiply brightness-[0.8] contrast-[1.1]"
-              />
-            </div>
-
-            <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-              <div>
-                <h1 className="text-4xl font-black uppercase leading-[0.92] tracking-[-0.05em] sm:text-5xl md:text-7xl">
-                  Built with grit.
-                  <br />
-                  Ready for action.
-                </h1>
-
-                <p className="mt-5 max-w-2xl text-lg leading-7 text-[#e8e2d2] sm:text-xl">
-                  Firearms, tactical gear, transfers, and hands-on service for the Ridgecrest community.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
-                  <a
-                    href="tel:+17605901992"
-                    className="rounded-xl bg-[#e6cf86] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-black transition hover:brightness-110 sm:px-6 sm:text-sm"
-                  >
-                    Call (760) 590-1992
-                  </a>
-                  <a
-                    href="mailto:info@tnaarmory.com"
-                    className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white transition hover:bg-white/15 sm:px-6 sm:text-sm"
-                  >
-                    Email Us
-                  </a>
+              <section className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8">
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <img
+                    src={heroLogo}
+                    alt="T&A Armory background"
+                    className="h-full max-h-[560px] w-full object-contain opacity-20 grayscale mix-blend-multiply brightness-[0.8] contrast-[1.1]"
+                  />
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {[
-                    "Veteran Owned",
-                    "Authorized Dealers",
-                    "Transfers Available",
-                    "Tactical Gear",
-                    "Ridgecrest, CA",
-                  ].map((badge) => (
-                    <div
-                      key={badge}
-                      className="rounded-full border border-[#e6cf86]/25 bg-[#151d13] px-3 py-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#f1d98d]"
-                    >
-                      {badge}
+                <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+                  <div>
+                    <h1 className="text-4xl font-black uppercase leading-[0.92] tracking-[-0.05em] sm:text-5xl md:text-7xl">
+                      Built with grit.
+                      <br />
+                      Ready for action.
+                    </h1>
+
+                    <p className="mt-5 max-w-2xl text-lg leading-7 text-[#e8e2d2] sm:text-xl">
+                      Firearms, tactical gear, transfers, and hands-on service for the Ridgecrest community.
+                    </p>
+
+                    <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
+                      <a
+                        href="tel:+17605901992"
+                        className="rounded-xl bg-[#e6cf86] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-black transition hover:brightness-110 sm:px-6 sm:text-sm"
+                      >
+                        Call (760) 590-1992
+                      </a>
+                      <a
+                        href="mailto:info@tnaarmory.com"
+                        className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white transition hover:bg-white/15 sm:px-6 sm:text-sm"
+                      >
+                        Email Us
+                      </a>
                     </div>
-                  ))}
-                </div>
-              </div>
 
-              <div className="rounded-[1.75rem] border border-white/10 bg-[#202c1c]/80 p-5 shadow-2xl shadow-black/30 sm:p-8">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-[#556f4b] bg-[#556f4b]/20 p-5">
-                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ddc7]">Primary Phone</div>
-                    <a href="tel:+17605901992" className="mt-2 block text-lg font-black sm:text-xl">(760) 590-1992</a>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {[
+                        "Veteran Owned",
+                        "Authorized Dealers",
+                        "Transfers Available",
+                        "Tactical Gear",
+                        "Ridgecrest, CA",
+                      ].map((badge) => (
+                        <div
+                          key={badge}
+                          className="rounded-full border border-[#e6cf86]/25 bg-[#151d13] px-3 py-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#f1d98d]"
+                        >
+                          {badge}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="rounded-2xl border border-[#6f8455] bg-[#6f8455]/20 p-5">
-                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ddc7]">Secondary Phone</div>
-                    <a href="tel:+17605762578" className="mt-2 block text-lg font-black sm:text-xl">(760) 576-2578</a>
+
+                  <div className="rounded-[1.75rem] border border-white/10 bg-[#202c1c]/80 p-5 shadow-2xl shadow-black/30 sm:p-8">
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <div className="rounded-2xl border border-[#556f4b] bg-[#556f4b]/20 p-5">
+                        <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ddc7]">Primary Phone</div>
+                        <a href="tel:+17605901992" className="mt-2 block text-lg font-black sm:text-xl">(760) 590-1992</a>
+                      </div>
+                      <div className="rounded-2xl border border-[#6f8455] bg-[#6f8455]/20 p-5">
+                        <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ddc7]">Secondary Phone</div>
+                        <a href="tel:+17605762578" className="mt-2 block text-lg font-black sm:text-xl">(760) 576-2578</a>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-5 sm:col-span-2">
+                        <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ddc7]">Email</div>
+                        <a href="mailto:info@tnaarmory.com" className="mt-2 block break-all text-lg font-black sm:text-xl">info@tnaarmory.com</a>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-5 sm:col-span-2">
+                        <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ddc7]">Hours</div>
+                        <div className="mt-2 space-y-1 text-sm font-semibold text-[#f0ecdf] sm:text-base">
+                          {hours.map((item) => (
+                            <div key={item}>{item}</div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 sm:col-span-2">
-                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ddc7]">Email</div>
-                    <a href="mailto:info@tnaarmory.com" className="mt-2 block break-all text-lg font-black sm:text-xl">info@tnaarmory.com</a>
+                </div>
+              </section>
+
+              <section id="dealers" className="px-4 py-8 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0f140d]/85 p-4 sm:p-5">
+                  <div className="mb-4">
+                    <div className="text-xs font-bold uppercase tracking-[0.16em] text-[#d5d9c2]">
+                      Authorized Brands
+                    </div>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 sm:col-span-2">
-                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ddc7]">Hours</div>
-                    <div className="mt-2 space-y-1 text-sm font-semibold text-[#f0ecdf] sm:text-base">
-                      {hours.map((item) => (
-                        <div key={item}>{item}</div>
+
+                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#12180f] py-5">
+                    <div
+                      className="flex min-w-max items-center gap-8 px-6"
+                      style={{ animation: "dealer-scroll 28s linear infinite" }}
+                    >
+                      {dealerStrip.map((partner, index) => (
+                        <div
+                          key={`${partner.name}-${index}`}
+                          className="group relative flex min-w-[210px] items-center justify-center overflow-hidden rounded-xl border border-[#6f6a55]/40 bg-[linear-gradient(180deg,rgba(65,68,60,0.92)_0%,rgba(28,31,26,0.98)_100%)] px-6 py-4 transition-all duration-300 hover:border-[#e6cf86]/45 hover:shadow-[0_0_18px_rgba(230,207,134,0.28)]"
+                        >
+                          <div className="pointer-events-none absolute inset-[1px] rounded-[10px] border border-white/5" />
+                          <div className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#e6cf86]/35 to-transparent" />
+                          <img
+                            src={partner.logo}
+                            alt={partner.name}
+                            className="relative z-10 max-h-16 max-w-full object-contain mix-blend-lighten drop-shadow-[0_0_10px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
                       ))}
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
+              </section>
 
-          <section id="dealers" className="px-4 py-8 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0f140d]/85 p-4 sm:p-5">
-              <div className="mb-4">
-                <div className="text-xs font-bold uppercase tracking-[0.16em] text-[#d5d9c2]">
-                  Authorized Brands
-                </div>
-              </div>
-
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#12180f] py-5">
-                <div
-                  className="flex min-w-max items-center gap-8 px-6"
-                  style={{ animation: "dealer-scroll 28s linear infinite" }}
-                >
-                  {dealerStrip.map((partner, index) => (
-                    <div
-                      key={`${partner.name}-${index}`}
-                      className="group relative flex min-w-[210px] items-center justify-center overflow-hidden rounded-xl border border-[#6f6a55]/40 bg-[linear-gradient(180deg,rgba(65,68,60,0.92)_0%,rgba(28,31,26,0.98)_100%)] px-6 py-4 transition-all duration-300 hover:border-[#e6cf86]/45 hover:shadow-[0_0_18px_rgba(230,207,134,0.28)]"
-                    >
-                      <div className="pointer-events-none absolute inset-[1px] rounded-[10px] border border-white/5" />
-                      <div className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#e6cf86]/35 to-transparent" />
-                      <img
-                        src={partner.logo}
-                        alt={partner.name}
-                        className="relative z-10 max-h-16 max-w-full object-contain mix-blend-lighten drop-shadow-[0_0_10px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-110"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div className="mx-auto grid max-w-7xl gap-6 rounded-[1.75rem] border border-white/10 bg-[#10170f]/88 p-6 sm:p-8 md:grid-cols-[1.05fr_0.95fr] md:p-10">
-              <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#11180f]">
-                <img
-                  src={storefrontPhoto}
-                  alt="T&A Armory storefront"
-                  className="h-full min-h-[320px] w-full object-cover"
-                />
-              </div>
-
-              <div className="flex flex-col justify-center">
-                <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
-                  Visit The Armory
-                </div>
-                <h2 className="mt-3 text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
-                  See The Shop.
-                  <br />
-                  Gear Up In Person.
-                </h2>
-                <p className="mt-5 max-w-xl text-base leading-7 text-[#e8e2d2] sm:text-lg">
-                  Stop by T&A Armory in Ridgecrest for firearms, tactical gear, transfers, and hands-on service from a veteran-owned local shop built for real customers.
-                </p>
-
-                <div className="mt-6 space-y-2 text-sm font-bold uppercase tracking-[0.12em] text-[#d5d9c2] sm:text-base">
-                  {address.map((line) => (
-                    <div key={line}>{line}</div>
-                  ))}
-                  <div>(760) 590-1992</div>
-                </div>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <a
-                    href="tel:+17605901992"
-                    className="rounded-xl bg-[#e6cf86] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-black transition hover:brightness-110 sm:px-6 sm:text-sm"
-                  >
-                    Call The Shop
-                  </a>
-                  <a
-                    href="#gallery"
-                    className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white transition hover:bg-white/15 sm:px-6 sm:text-sm"
-                  >
-                    View Gallery
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          </>
-          )}
-
-          {page === "services" && (
-          <section id="services" className="px-4 py-6 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-white/5 p-6 sm:p-8 md:p-10">
-              <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Services</h2>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {services.map((service, index) => (
-                  <div
-                    key={service}
-                    className={`rounded-xl border p-5 ${
-                      index % 3 === 0
-                        ? "border-[#556f4b] bg-[#556f4b]/15"
-                        : index % 3 === 1
-                          ? "border-[#6f8455] bg-[#6f8455]/15"
-                          : "border-[#d9c98b]/20 bg-[#d9c98b]/10"
-                    }`}
-                  >
-                    <div className="text-lg font-black uppercase leading-6">{service}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          )}
-
-          {page === "gallery" && (
-          <section id="gallery" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
-              <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Gallery</h2>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
-                {gallery.map((item) => (
-                  <div key={item.name} className="overflow-hidden rounded-2xl border border-white/10 bg-[#263420]">
-                    <div className="h-52 overflow-hidden sm:h-56">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-4 text-sm font-black uppercase tracking-[0.08em]">
-                      {item.name}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          )}
-
-          {page === "merch" && (
-          <section id="merch" className="px-4 py-6 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-white/5 p-6 sm:p-8 md:p-10">
-              <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Merchandise</h2>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {merch.map((item) => (
-                  <div key={item.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-[#263420]">
-                    <div className="h-[420px] w-full overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="p-4 text-center text-sm font-black uppercase tracking-[0.08em]">
-                      {item.name}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          )}
-
-          {page === "reviews" && (
-          <section id="reviews" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
-              <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Google Reviews</h2>
-              <div className="mt-8 grid gap-4 lg:grid-cols-3 sm:gap-6">
-                {reviews.map((review) => (
-                  <div key={review.name} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div className="text-lg text-[#efe2ae]">{"★".repeat(review.rating)}</div>
-                    <div className="mt-4 text-base leading-7 text-[#f1edde]">{review.text}</div>
-                    <div className="mt-5 text-sm font-black uppercase tracking-[0.08em] text-[#d7ddc7]">{review.name}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          )}
-
-          {page === "event" && (
-          <section id="event" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
-                    Upcoming Event
-                  </div>
-                  <h2 className="mt-2 text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
-                    {upcomingEvent.title}
-                  </h2>
-                  <div className="mt-6 space-y-3 text-[#f1edde]">
-                    <div>
-                      <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Date</span>
-                      <div className="mt-1 text-xl font-black">{upcomingEvent.date}</div>
-                    </div>
-                    <div>
-                      <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Time</span>
-                      <div className="mt-1 text-xl font-black">{upcomingEvent.time}</div>
-                    </div>
-                    <div>
-                      <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Location</span>
-                      <div className="mt-1 text-xl font-black">{upcomingEvent.location}</div>
-                      <div className="text-base text-[#d5d9c2]">{upcomingEvent.address}</div>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 grid gap-4 sm:grid-cols-4">
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-                      <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.days}</div>
-                      <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Days</div>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-                      <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.hours}</div>
-                      <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Hours</div>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-                      <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.minutes}</div>
-                      <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Minutes</div>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-                      <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.seconds}</div>
-                      <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Seconds</div>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <a
-                      href={upcomingEvent.rsvpUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-xl bg-[#e6cf86] px-6 py-3 text-sm font-black uppercase tracking-[0.1em] text-black transition hover:brightness-110"
-                    >
-                      RSVP
-                    </a>
-                  </div>
-                </div>
-
-                <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#11180f]">
-                  <div className="flex min-h-[460px] items-center justify-center bg-black/20">
+              <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+                <div className="mx-auto grid max-w-7xl gap-6 rounded-[1.75rem] border border-white/10 bg-[#10170f]/88 p-6 sm:p-8 md:grid-cols-[1.05fr_0.95fr] md:p-10">
+                  <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#11180f]">
                     <img
-                      src={upcomingEvent.flyerImage}
-                      alt={`${upcomingEvent.title} flyer`}
-                      className="h-full w-full object-cover"
+                      src={storefrontPhoto}
+                      alt="T&A Armory storefront"
+                      className="h-full min-h-[320px] w-full object-cover"
                     />
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
 
-          )}
-
-          {page === "currentGuns" && (
-          <section id="current-guns" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
-                    In Stock Now
-                  </div>
-                  <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
-                    Current Guns
-                  </h2>
-                </div>
-                <p className="max-w-xl text-sm leading-6 text-[#d5d9c2] sm:text-base">
-                  Choose a category below to view current in-stock firearms with a picture and price for each one.
-                </p>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {(Object.keys(currentGunCategories) as Array<keyof typeof currentGunCategories>).map((category) => (
-                  <button
-                    key={category}
-                    type="button"
-                    onClick={() => setGunCategory(category)}
-                    className={`rounded-xl px-5 py-3 text-xs font-black uppercase tracking-[0.1em] transition sm:text-sm ${
-                      gunCategory === category
-                        ? "bg-[#e6cf86] text-black"
-                        : "border border-white/15 bg-white/10 text-white hover:bg-white/15"
-                    }`}
-                  >
-                    {gunCategoryLabels[category]}
-                  </button>
-                ))}
-              </div>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 sm:gap-6">
-                {currentGunCategories[gunCategory].map((gun, index) => (
-                  <div
-                    key={`${gun.name}-${index}`}
-                    className="overflow-hidden rounded-2xl border border-white/10 bg-[#263420]"
-                  >
-                    <div className="h-64 overflow-hidden bg-black/25">
-                      <img
-                        src={gun.image}
-                        alt={gun.name}
-                        className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                      />
+                  <div className="flex flex-col justify-center">
+                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+                      Visit The Armory
                     </div>
-                    <div className="p-5 text-center">
-                      <div className="text-base font-black uppercase tracking-[0.08em] sm:text-lg">
-                        {gun.name}
-                      </div>
-                      <div className="mt-2 text-2xl font-black text-[#e6cf86]">
-                        {gun.price}
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedGun(gun.name)}
-                        className="mt-4 rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-white/15"
-                      >
-                        Make Inquiry
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+                    <h2 className="mt-3 text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
+                      See The Shop.
+                      <br />
+                      Gear Up In Person.
+                    </h2>
+                    <p className="mt-5 max-w-xl text-base leading-7 text-[#e8e2d2] sm:text-lg">
+                      Stop by T&A Armory in Ridgecrest for firearms, tactical gear, transfers, and hands-on service from a veteran-owned local shop built for real customers.
+                    </p>
 
-          )}
-
-          {page === "gunsmith" && (
-          <section id="gunsmith" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div className="mx-auto max-w-5xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
-              <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
-                Gunsmith Inquiries
-              </h2>
-
-              <p className="mt-4 max-w-2xl text-[#e8e2d2]">
-                Need gunsmith work or have questions about repairs, modifications, or maintenance? Send us the details and we will get back to you.
-              </p>
-
-              <form
-                action="mailto:info@tnaarmory.com"
-                method="POST"
-                encType="text/plain"
-                className="mt-8 grid gap-4"
-              >
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
-                />
-
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  required
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
-                />
-
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
-                />
-
-                <textarea
-                  name="description"
-                  placeholder="Describe the gunsmith work or issue"
-                  rows={5}
-                  required
-                  className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
-                />
-
-                <button
-                  type="submit"
-                  className="rounded-xl bg-[#e6cf86] px-6 py-3 text-sm font-black uppercase tracking-[0.1em] text-black hover:brightness-110"
-                >
-                  Send Inquiry
-                </button>
-              </form>
-            </div>
-          </section>
-
-          )}
-
-          {page === "contact" && (
-          <section id="contact" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div className="mx-auto grid max-w-7xl gap-6 rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:grid-cols-[1.05fr_0.95fr] md:p-10">
-              <div>
-                <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Contact</h2>
-                <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-                  <a href="tel:+17605901992" className="rounded-xl bg-[#e6cf86] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-black sm:px-6 sm:text-sm">Call Primary</a>
-                  <a href="mailto:info@tnaarmory.com" className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white sm:px-6 sm:text-sm">Email Us</a>
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div className="space-y-4 text-[#f1edde]">
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Address</div>
-                    <div className="mt-1 text-lg font-black leading-7">
+                    <div className="mt-6 space-y-2 text-sm font-bold uppercase tracking-[0.12em] text-[#d5d9c2] sm:text-base">
                       {address.map((line) => (
                         <div key={line}>{line}</div>
                       ))}
+                      <div>(760) 590-1992</div>
+                    </div>
+
+                    <div className="mt-7 flex flex-wrap gap-3">
+                      <a
+                        href="tel:+17605901992"
+                        className="rounded-xl bg-[#e6cf86] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-black transition hover:brightness-110 sm:px-6 sm:text-sm"
+                      >
+                        Call The Shop
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => openPage("gallery")}
+                        className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white transition hover:bg-white/15 sm:px-6 sm:text-sm"
+                      >
+                        View Gallery
+                      </button>
                     </div>
                   </div>
+                </div>
+              </section>
+            </>
+          )}
+
+          {page === "services" && (
+            <section id="services" className="px-4 py-6 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-white/5 p-6 sm:p-8 md:p-10">
+                <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Services</h2>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {services.map((service, index) => (
+                    <div
+                      key={service}
+                      className={`rounded-xl border p-5 ${
+                        index % 3 === 0
+                          ? "border-[#556f4b] bg-[#556f4b]/15"
+                          : index % 3 === 1
+                            ? "border-[#6f8455] bg-[#6f8455]/15"
+                            : "border-[#d9c98b]/20 bg-[#d9c98b]/10"
+                      }`}
+                    >
+                      <div className="text-lg font-black uppercase leading-6">{service}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {page === "gallery" && (
+            <section id="gallery" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+              <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
+                <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Gallery</h2>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
+                  {gallery.map((item) => (
+                    <div key={item.name} className="overflow-hidden rounded-2xl border border-white/10 bg-[#263420]">
+                      <div className="h-52 overflow-hidden sm:h-56">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-4 text-sm font-black uppercase tracking-[0.08em]">
+                        {item.name}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {page === "merch" && (
+            <section id="merch" className="px-4 py-6 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-white/5 p-6 sm:p-8 md:p-10">
+                <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Merchandise</h2>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {merch.map((item) => (
+                    <div key={item.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-[#263420]">
+                      <div className="h-[420px] w-full overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                        />
+                      </div>
+                      <div className="p-4 text-center text-sm font-black uppercase tracking-[0.08em]">
+                        {item.name}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {page === "reviews" && (
+            <section id="reviews" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+              <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
+                <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Google Reviews</h2>
+                <div className="mt-8 grid gap-4 lg:grid-cols-3 sm:gap-6">
+                  {reviews.map((review) => (
+                    <div key={review.name} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                      <div className="text-lg text-[#efe2ae]">{"★".repeat(review.rating)}</div>
+                      <div className="mt-4 text-base leading-7 text-[#f1edde]">{review.text}</div>
+                      <div className="mt-5 text-sm font-black uppercase tracking-[0.08em] text-[#d7ddc7]">{review.name}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {page === "event" && (
+            <section id="event" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+              <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
+                <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Primary Phone</div>
-                    <a href="tel:+17605901992" className="mt-1 block text-lg font-black">(760) 590-1992</a>
+                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+                      Upcoming Event
+                    </div>
+                    <h2 className="mt-2 text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
+                      {upcomingEvent.title}
+                    </h2>
+                    <div className="mt-6 space-y-3 text-[#f1edde]">
+                      <div>
+                        <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Date</span>
+                        <div className="mt-1 text-xl font-black">{upcomingEvent.date}</div>
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Time</span>
+                        <div className="mt-1 text-xl font-black">{upcomingEvent.time}</div>
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Location</span>
+                        <div className="mt-1 text-xl font-black">{upcomingEvent.location}</div>
+                        <div className="text-base text-[#d5d9c2]">{upcomingEvent.address}</div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 grid gap-4 sm:grid-cols-4">
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                        <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.days}</div>
+                        <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Days</div>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                        <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.hours}</div>
+                        <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Hours</div>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                        <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.minutes}</div>
+                        <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Minutes</div>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                        <div className="text-3xl font-black text-[#e6cf86]">{timeLeft.seconds}</div>
+                        <div className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Seconds</div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 flex flex-wrap gap-3">
+                      <a
+                        href={upcomingEvent.rsvpUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-xl bg-[#e6cf86] px-6 py-3 text-sm font-black uppercase tracking-[0.1em] text-black transition hover:brightness-110"
+                      >
+                        RSVP
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Secondary Phone</div>
-                    <a href="tel:+17605762578" className="mt-1 block text-lg font-black">(760) 576-2578</a>
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Email</div>
-                    <a href="mailto:info@tnaarmory.com" className="mt-1 block break-all text-lg font-black">info@tnaarmory.com</a>
+
+                  <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#11180f]">
+                    <div className="flex min-h-[460px] items-center justify-center bg-black/20">
+                      <img
+                        src={upcomingEvent.flyerImage}
+                        alt={`${upcomingEvent.title} flyer`}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          )}
+
+          {page === "currentGuns" && (
+            <section id="current-guns" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+              <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+                      In Stock Now
+                    </div>
+                    <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
+                      Current Guns
+                    </h2>
+                  </div>
+                  <p className="max-w-xl text-sm leading-6 text-[#d5d9c2] sm:text-base">
+                    Choose a category below to view current in-stock firearms with a picture and price for each one.
+                  </p>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      type="button"
+                      onClick={() => setGunCategory(category)}
+                      className={`rounded-xl px-5 py-3 text-xs font-black uppercase tracking-[0.1em] transition sm:text-sm ${
+                        gunCategory === category
+                          ? "bg-[#e6cf86] text-black"
+                          : "border border-white/15 bg-white/10 text-white hover:bg-white/15"
+                      }`}
+                    >
+                      {gunCategoryLabels[category]}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 sm:gap-6">
+                  {currentGunCategories[gunCategory].map((gun, index) => (
+                    <div
+                      key={`${gun.name}-${index}`}
+                      className="overflow-hidden rounded-2xl border border-white/10 bg-[#263420]"
+                    >
+                      <div className="h-64 overflow-hidden bg-black/25">
+                        <img
+                          src={gun.image}
+                          alt={gun.name}
+                          className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-5 text-center">
+                        <div className="text-base font-black uppercase tracking-[0.08em] sm:text-lg">
+                          {gun.name}
+                        </div>
+                        <div className="mt-2 text-2xl font-black text-[#e6cf86]">
+                          {gun.price}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedGun(gun.name)}
+                          className="mt-4 rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-white/15"
+                        >
+                          Make Inquiry
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {page === "gunsmith" && (
+            <section id="gunsmith" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+              <div className="mx-auto max-w-5xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
+                <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
+                  Gunsmith Inquiries
+                </h2>
+
+                <p className="mt-4 max-w-2xl text-[#e8e2d2]">
+                  Need gunsmith work or have questions about repairs, modifications, or maintenance? Send us the details and we will get back to you.
+                </p>
+
+                <form
+                  action="https://formsubmit.co/info@tnaarmory.com"
+                  method="POST"
+                  className="mt-8 grid gap-4"
+                >
+                  <input type="hidden" name="_subject" value="Gunsmith Inquiry" />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                  />
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                    className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                  />
+
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                  />
+
+                  <textarea
+                    name="description"
+                    placeholder="Describe the gunsmith work or issue"
+                    rows={5}
+                    required
+                    className="rounded-xl border border-white/10 bg-[#11180f] px-4 py-3 text-white"
+                  />
+
+                  <button
+                    type="submit"
+                    className="rounded-xl bg-[#e6cf86] px-6 py-3 text-sm font-black uppercase tracking-[0.1em] text-black hover:brightness-110"
+                  >
+                    Send Inquiry
+                  </button>
+                </form>
+              </div>
+            </section>
+          )}
+
+          {page === "contact" && (
+            <section id="contact" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+              <div className="mx-auto grid max-w-7xl gap-6 rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:grid-cols-[1.05fr_0.95fr] md:p-10">
+                <div>
+                  <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Contact</h2>
+                  <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
+                    <a href="tel:+17605901992" className="rounded-xl bg-[#e6cf86] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-black sm:px-6 sm:text-sm">Call Primary</a>
+                    <a href="mailto:info@tnaarmory.com" className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white sm:px-6 sm:text-sm">Email Us</a>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div className="space-y-4 text-[#f1edde]">
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Address</div>
+                      <div className="mt-1 text-lg font-black leading-7">
+                        {address.map((line) => (
+                          <div key={line}>{line}</div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Primary Phone</div>
+                      <a href="tel:+17605901992" className="mt-1 block text-lg font-black">(760) 590-1992</a>
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Secondary Phone</div>
+                      <a href="tel:+17605762578" className="mt-1 block text-lg font-black">(760) 576-2578</a>
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Email</div>
+                      <a href="mailto:info@tnaarmory.com" className="mt-1 block break-all text-lg font-black">info@tnaarmory.com</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           )}
         </main>
 
@@ -972,24 +961,6 @@ function TnaArmoryWebsite() {
     </>
   );
 }
-
-const categories = [
-  "Handguns",
-  "Revolvers",
-  "Rifles",
-  "Shotguns",
-  "LessLethal",
-] as const;
-
-type Category = typeof categories[number];
-
-const gunCategoryLabels: Record<Category, string> = {
-  Handguns: "Handguns",
-  Revolvers: "Revolvers",
-  Rifles: "Rifles",
-  Shotguns: "Shotguns",
-  LessLethal: "Less Lethal",
-};
 
 export default function App() {
   return <TnaArmoryWebsite />;
