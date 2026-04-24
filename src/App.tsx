@@ -73,27 +73,27 @@ const storefrontPhoto = "/store front.jpg";
 const merch = [
   {
     name: "Hoodies",
-    image: "/hoodie.jpg",
+    image: "/Hoodies.png",
   },
   {
     name: "Hats",
-    image: "/hat.jpg",
+    image: "/Hats.png",
   },
   {
     name: "Patches",
-    image: "/patch.jpg",
+    image: "/Patches.png",
   },
   {
     name: "Shirts",
-    image: "/shirt.jpg",
+    image: "/Shirts.png",
   },
   {
-    name: "Gear Boxes",
-    image: "/box.jpg",
+    name: "Beenies",
+    image: "/Beenies.png",
   },
   {
     name: "T&A Armory Truck",
-    image: "/truck.jpg",
+    image: "/TNA Truck.png",
   },
 ];
 
@@ -401,27 +401,27 @@ function TnaArmoryWebsite() {
             </div>
 
             <nav className="hidden gap-5 text-xs font-bold uppercase tracking-[0.12em] text-[#e7e2d0] xl:flex">
-              <button type="button" onClick={() => openPage("home")} className="hover:text-white">Home</button>
-              <button type="button" onClick={() => openPage("services")} className="hover:text-white">Services</button>
-              <button type="button" onClick={() => openPage("gallery")} className="hover:text-white">Gallery</button>
-              <button type="button" onClick={() => openPage("merch")} className="hover:text-white">Merch</button>
-              <button type="button" onClick={() => openPage("reviews")} className="hover:text-white">Reviews</button>
-              <button type="button" onClick={() => openPage("event")} className="hover:text-white">Event</button>
-              <button type="button" onClick={() => openPage("currentGuns")} className="hover:text-white">Current Guns</button>
-              <button type="button" onClick={() => openPage("gunsmith")} className="hover:text-white">Gunsmith</button>
-              <button type="button" onClick={() => openPage("contact")} className="hover:text-white">Contact</button>
+              <button type="button" onClick={() => openPage("home")}>Home</button>
+              <button type="button" onClick={() => openPage("currentGuns")}>Current Guns</button>
+              <button type="button" onClick={() => openPage("services")}>Services</button>
+              <button type="button" onClick={() => openPage("gunsmith")}>Gunsmith</button>
+              <button type="button" onClick={() => openPage("merch")}>Merch</button>
+              <button type="button" onClick={() => openPage("gallery")}>Gallery</button>
+              <button type="button" onClick={() => openPage("reviews")}>Reviews</button>
+              <button type="button" onClick={() => openPage("event")}>Event</button>
+              <button type="button" onClick={() => openPage("contact")}>Contact</button>
             </nav>
           </div>
 
           <nav className="mx-auto flex max-w-7xl gap-3 overflow-x-auto border-t border-white/10 px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#e7e2d0] sm:px-6 xl:hidden">
             <button type="button" onClick={() => openPage("home")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Home</button>
+            <button type="button" onClick={() => openPage("currentGuns")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Current Guns</button>
             <button type="button" onClick={() => openPage("services")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Services</button>
-            <button type="button" onClick={() => openPage("gallery")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gallery</button>
+            <button type="button" onClick={() => openPage("gunsmith")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gunsmith</button>
             <button type="button" onClick={() => openPage("merch")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Merch</button>
+            <button type="button" onClick={() => openPage("gallery")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gallery</button>
             <button type="button" onClick={() => openPage("reviews")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Reviews</button>
             <button type="button" onClick={() => openPage("event")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Event</button>
-            <button type="button" onClick={() => openPage("currentGuns")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Current Guns</button>
-            <button type="button" onClick={() => openPage("gunsmith")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gunsmith</button>
             <button type="button" onClick={() => openPage("contact")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Contact</button>
           </nav>
         </header>
