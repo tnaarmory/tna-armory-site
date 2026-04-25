@@ -146,18 +146,14 @@ const currentGunCategories = {
     { name: "Savage 110 270", price: "$570", image: "/Savage 110.png" },
     { name: "Ruger 10/22", price: "$400", image: "/1022 2.png" },
     { name: "Anschutz 64", price: "$950", image: "/64 2.png" },
-    { name: "Rossi RS22", price: "$150", image: "/RS22.png" },
-    { name: "Remington 783", price: "$450", image: "/Remington 783.png" },
+    { name: "Savage 23AA", price: "$350", image: "/23AA.png" },
     { name: "Savage 110 308", price: "$650", image: "/savage 110 308.png" },
-    { name: "Savage Axis", price: "$500", image: "/Savage axis.png" },
-    { name: "Ruger 10/22", price: "$400", image: "/chrome 1022.png" },
   ],
   Shotguns: [
     { name: "Remington 1100", price: "$720", image: "/1100 2.png" },
     { name: "Rock Island VR80", price: "$600", image: "/VR80.png" },
     { name: "Stevens 320", price: "$420", image: "/stevens 320.png" },
     { name: "Winchester Defender", price: "$400", image: "/Winchester Defender.png" },
-    { name: "Benelli Nova", price: "425", image: "/benelli nova.png" },
   ],
   LessLethal: [
     { name: "Byrna SD", price: "$400", image: "/byrna sd.png" },
@@ -182,6 +178,43 @@ const gunCategoryLabels: Record<Category, string> = {
   Rifles: "Rifles",
   Shotguns: "Shotguns",
   LessLethal: "Less Lethal",
+};
+
+const gunDetails: Record<string, { make: string; model: string; caliber: string }> = {
+  "Rost Martin RM1S": { make: "Rost Martin", model: "RM1S", caliber: "9mm" },
+  "Canik MC9 Prime": { make: "Canik", model: "MC9 Prime", caliber: "9mm" },
+  "Sig Sauer P365": { make: "Sig Sauer", model: "P365", caliber: "9mm" },
+  "Smith and Wesson Shield": { make: "Smith & Wesson", model: "Shield", caliber: "9mm" },
+  "Ruger BlackHawk": { make: "Ruger", model: "Blackhawk", caliber: ".357 Magnum" },
+  "Smith and Wesson 351C": { make: "Smith & Wesson", model: "351C", caliber: ".22 Magnum" },
+  "Ruger Single Six": { make: "Ruger", model: "Single Six", caliber: ".22 LR" },
+  "Smith and Wesson K22": { make: "Smith & Wesson", model: "K22", caliber: ".22 LR" },
+  "Taurus 856": { make: "Taurus", model: "856", caliber: ".38 Special" },
+  "Smith and Wesson 35-1": { make: "Smith & Wesson", model: "35-1", caliber: ".22 LR" },
+  "PSA AR-15": { make: "PSA", model: "AR-15", caliber: "5.56 / .223" },
+  "Savage 334": { make: "Savage", model: "334", caliber: "30-06" },
+  "Mossberg Patriot": { make: "Mossberg", model: "Patriot", caliber: "6.5 Creedmoor" },
+  "Pedersoli 1854": { make: "Pedersoli", model: "1854", caliber: "45-100" },
+  "Savage 110 270": { make: "Savage", model: "110", caliber: ".270" },
+  "Ruger 10/22": { make: "Ruger", model: "10/22", caliber: ".22 LR" },
+  "Anschutz 64": { make: "Anschutz", model: "64", caliber: ".22 LR" },
+  "Rossi RS22": { make: "Rossi", model: "RS22", caliber: ".22 LR" },
+  "Remington 783": { make: "Remington", model: "783", caliber: "6.5 Creedmoor" },
+  "Savage 110 308": { make: "Savage", model: "110", caliber: ".308" },
+  "Savage Axis": { make: "Savage", model: "Axis", caliber: "6.5 Creedmoor" },
+  "Remington 1100": { make: "Remington", model: "1100", caliber: "12 Gauge" },
+  "Rock Island VR80": { make: "Rock Island", model: "VR80", caliber: "12 Gauge" },
+  "Stevens 320": { make: "Stevens", model: "320", caliber: "12 Gauge" },
+  "Winchester Defender": { make: "Winchester", model: "Defender", caliber: "12 Gauge" },
+  "Benelli Nova": { make: "Benelli", model: "Nova", caliber: "12 Gauge" },
+  "Byrna SD": { make: "Byrna", model: "SD", caliber: ".68 Cal Less-Lethal" },
+  "Byrna CL": { make: "Byrna", model: "CL", caliber: ".61 Cal Less-Lethal" },
+  "Byrna LE": { make: "Byrna", model: "LE", caliber: ".68 Cal Less-Lethal" },
+  "Savage 23AA": { make: "Savage", model: "23AA", caliber: ".22 LR" },
+};
+
+const getGunDetails = (name: string) => {
+  return gunDetails[name] ?? { make: "Call for details", model: name, caliber: "Call for caliber" };
 };
 
 const upcomingEvent = {
@@ -401,28 +434,28 @@ function TnaArmoryWebsite() {
             </div>
 
             <nav className="hidden gap-5 text-xs font-bold uppercase tracking-[0.12em] text-[#e7e2d0] xl:flex">
-              <button type="button" onClick={() => openPage("home")}>Home</button>
-              <button type="button" onClick={() => openPage("currentGuns")}>Current Guns</button>
-              <button type="button" onClick={() => openPage("services")}>Services</button>
-              <button type="button" onClick={() => openPage("gunsmith")}>Gunsmith</button>
-              <button type="button" onClick={() => openPage("merch")}>Merch</button>
-              <button type="button" onClick={() => openPage("gallery")}>Gallery</button>
-              <button type="button" onClick={() => openPage("reviews")}>Reviews</button>
-              <button type="button" onClick={() => openPage("event")}>Event</button>
-              <button type="button" onClick={() => openPage("contact")}>Contact</button>
+              <button type="button" onClick={() => openPage("home")} className="hover:text-white">Home</button>
+              <button type="button" onClick={() => openPage("currentGuns")} className="px-3 py-1 rounded bg-[#e6cf86] text-black animate-pulse">Current Guns</button>
+              <button type="button" onClick={() => openPage("gunsmith")} className="hover:text-white">Gunsmith</button>
+              <button type="button" onClick={() => openPage("merch")} className="hover:text-white">Merch</button>
+              <button type="button" onClick={() => openPage("contact")} className="hover:text-white">Contact</button>
+              <button type="button" onClick={() => openPage("event")} className="hover:text-white">Event</button>
+              <button type="button" onClick={() => openPage("gallery")} className="hover:text-white">Gallery</button>
+              <button type="button" onClick={() => openPage("services")} className="hover:text-white">Services</button>
+              <button type="button" onClick={() => openPage("reviews")} className="hover:text-white">Reviews</button>
             </nav>
           </div>
 
           <nav className="mx-auto flex max-w-7xl gap-3 overflow-x-auto border-t border-white/10 px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#e7e2d0] sm:px-6 xl:hidden">
             <button type="button" onClick={() => openPage("home")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Home</button>
-            <button type="button" onClick={() => openPage("currentGuns")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Current Guns</button>
-            <button type="button" onClick={() => openPage("services")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Services</button>
+            <button type="button" onClick={() => openPage("currentGuns")} className="shrink-0 rounded-lg bg-[#e6cf86] text-black px-3 py-2 animate-pulse">Current Guns</button>
             <button type="button" onClick={() => openPage("gunsmith")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gunsmith</button>
             <button type="button" onClick={() => openPage("merch")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Merch</button>
-            <button type="button" onClick={() => openPage("gallery")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gallery</button>
-            <button type="button" onClick={() => openPage("reviews")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Reviews</button>
-            <button type="button" onClick={() => openPage("event")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Event</button>
             <button type="button" onClick={() => openPage("contact")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Contact</button>
+            <button type="button" onClick={() => openPage("event")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Event</button>
+            <button type="button" onClick={() => openPage("gallery")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gallery</button>
+            <button type="button" onClick={() => openPage("services")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Services</button>
+            <button type="button" onClick={() => openPage("reviews")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Reviews</button>
           </nav>
         </header>
 
@@ -807,6 +840,11 @@ function TnaArmoryWebsite() {
                         </div>
                         <div className="mt-2 text-2xl font-black text-[#e6cf86]">
                           {gun.price}
+                        </div>
+                        <div className="mt-4 grid gap-2 rounded-xl border border-white/10 bg-black/15 p-3 text-left text-sm text-[#d5d9c2]">
+                          <div><span className="font-black uppercase tracking-[0.08em] text-[#e6cf86]">Make:</span> {getGunDetails(gun.name).make}</div>
+                          <div><span className="font-black uppercase tracking-[0.08em] text-[#e6cf86]">Model:</span> {getGunDetails(gun.name).model}</div>
+                          <div><span className="font-black uppercase tracking-[0.08em] text-[#e6cf86]">Caliber:</span> {getGunDetails(gun.name).caliber}</div>
                         </div>
                         <button
                           type="button"
