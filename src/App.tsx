@@ -152,7 +152,7 @@ const currentGunCategories = {
   Shotguns: [
     { name: "Remington 1100", price: "$720", image: "/1100 2.png" },
     { name: "Rock Island VR80", price: "$600", image: "/VR80.png" },
-    { name: "Stevens 320", price: "$420", image: "/stevens 320.png" },
+    { name: "Stevens 320", price: "Sold", image: "/stevens 320.png" },
     { name: "Winchester Defender", price: "$400", image: "/Winchester Defender.png" },
   ],
   LessLethal: [
