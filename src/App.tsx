@@ -97,24 +97,6 @@ const merch = [
   },
 ];
 
-const reviews = [
-  {
-    name: "Stew",
-    text: "Great customer service and a solid tactical selection.",
-    rating: 5,
-  },
-  {
-    name: "Nick",
-    text: "Helpful, knowledgeable, and easy to work with.",
-    rating: 5,
-  },
-  {
-    name: "Amber",
-    text: "Clean store, great gear, and friendly staff.",
-    rating: 5,
-  },
-];
-
 const hours = [
   "Monday – Friday: 4:30 PM – 8:00 PM",
   "Flex Friday: 9:00 AM – 6:00 PM",
@@ -125,35 +107,40 @@ const address = ["1615 N Down Suite B", "Ridgecrest, CA 93555"];
 
 const currentGunCategories = {
   Handguns: [
-    { name: "Rost Martin RM1S", price: "$500", image: "/rostmartin rm1s.png" },
-    { name: "Canik MC9 Prime", price: "$700", image: "/prime 2.png" },
-    { name: "Sig Sauer P365", price: "$580", image: "/P365.png" },
-    { name: "Smith and Wesson Shield", price: "$280", image: "/shield.png" },
+    { name: "Rost Martin RM1S", price: "$500", image: "/rm1s.png" },
+    { name: "Canik MC9 Prime", price: "$700", image: "/prime.png" },
+    { name: "Ruger SR22", price: "$580", image: "/SR22.png" },
+    { name: "Smith and Wesson Shield", price: "$300", image: "/SHIELD 40.png" },
+    { name: "Walther PDP", price: "$800", image: "/pdp.png" },
+    { name: "Smith and Wesson SD9VE", price: "$300", image: "/sd9ve.png" },
   ],
   Revolvers: [
-    { name: "Ruger BlackHawk", price: "$650", image: "/blackhawk.png" },
-    { name: "Smith and Wesson 351C", price: "$540", image: "/351C.png" },
-    { name: "Ruger Single Six", price: "$430", image: "/single six.png" },
-    { name: "Smith and Wesson K22", price: "$712", image: "/k22 2.png" },
-    { name: "Taurus 856", price: "$450", image: "/856 2.png" },
-    { name: "Smith and Wesson 35-1", price: "$1051", image: "/35-1 2.png" },
+    { name: "Ruger Service Six", price: "$650", image: "/service 6.png" },
+    { name: "Ruger Single Six", price: "$430", image: "/single 6.png" },
+    { name: "Smith and Wesson K22", price: "$712", image: "/k22.png" },
+    { name: "Taurus 856", price: "$450", image: "/856.png" },
+    { name: "Smith and Wesson 35-1", price: "$1051", image: "/35-1.png" },
+    { name: "H&R 930", price: "$230", image: "/H&R.png" },
   ],
   Rifles: [
-    { name: "PSA AR-15", price: "$1050", image: "/psa 2.png" },
+    { name: "PSA AR-15", price: "Sold", image: "/PSA.png" },
     { name: "Savage 334", price: "$650", image: "/334.png" },
-    { name: "Mossberg Patriot", price: "$500", image: "/Mossberg patriot.png" },
-    { name: "Pedersoli 1854", price: "$1650", image: "/1874 2.png" },
-    { name: "Savage 110 270", price: "$570", image: "/Savage 110.png" },
-    { name: "Ruger 10/22", price: "$400", image: "/1022 2.png" },
-    { name: "Anschutz 64", price: "$950", image: "/64 2.png" },
-    { name: "Savage 23AA", price: "$350", image: "/23AA.png" },
-    { name: "Savage 110 308", price: "$650", image: "/savage 110 308.png" },
+    { name: "Mossberg Patriot", price: "$500", image: "/patriot.png" },
+    { name: "Pedersoli 1854", price: "$1650", image: "/1873.png" },
+    { name: "Savage 110", price: "$570", image: "/110.png" },
+    { name: "Ruger 10/22", price: "$400", image: "/1022.png" },
+    { name: "Anschutz 64", price: "$950", image: "/64.png" },
+    { name: "Savage 23AA", price: "$350", image: "/23aa.png" },
+    { name: "Mossberg 715T", price: "$250", image: "/715T.png" },
+    { name: "Savage Axis", price: "$500", image: "/axis.png" },
+    { name: "Ruger Precision", price: "$500", image: "/precision.png" },
+    { name: "Remington 783", price: "$500", image: "/remington 783.png" },
+    { name: "Silver Ruger 10/22", price: "$400", image: "/silver 1022.png" },
   ],
   Shotguns: [
-    { name: "Remington 1100", price: "$720", image: "/1100 2.png" },
-    { name: "Rock Island VR80", price: "$600", image: "/VR80.png" },
-    { name: "Stevens 320", price: "Sold", image: "/stevens 320.png" },
-    { name: "Winchester Defender", price: "$400", image: "/Winchester Defender.png" },
+    { name: "Remington 1100", price: "$720", image: "/1100.png" },
+    { name: "Benelli Nova", price: "$425", image: "/nova.png" },
+    { name: "Winchester Defender", price: "$400", image: "/defender.png" },
   ],
   LessLethal: [
     { name: "Byrna SD", price: "$400", image: "/byrna sd.png" },
@@ -183,9 +170,9 @@ const gunCategoryLabels: Record<Category, string> = {
 const gunDetails: Record<string, { make: string; model: string; caliber: string }> = {
   "Rost Martin RM1S": { make: "Rost Martin", model: "RM1S", caliber: "9mm" },
   "Canik MC9 Prime": { make: "Canik", model: "MC9 Prime", caliber: "9mm" },
-  "Sig Sauer P365": { make: "Sig Sauer", model: "P365", caliber: "9mm" },
-  "Smith and Wesson Shield": { make: "Smith & Wesson", model: "Shield", caliber: "9mm" },
-  "Ruger BlackHawk": { make: "Ruger", model: "Blackhawk", caliber: ".357 Magnum" },
+  "Ruger SR22": { make: "Ruger", model: "SR22", caliber: "22LR" },
+  "Smith and Wesson Shield": { make: "Smith & Wesson", model: "Shield", caliber: "40 S&W" },
+  "Ruger Service Six": { make: "Ruger", model: "Service Six", caliber: ".357 Magnum" },
   "Smith and Wesson 351C": { make: "Smith & Wesson", model: "351C", caliber: ".22 Magnum" },
   "Ruger Single Six": { make: "Ruger", model: "Single Six", caliber: ".22 LR" },
   "Smith and Wesson K22": { make: "Smith & Wesson", model: "K22", caliber: ".22 LR" },
@@ -195,12 +182,11 @@ const gunDetails: Record<string, { make: string; model: string; caliber: string 
   "Savage 334": { make: "Savage", model: "334", caliber: "30-06" },
   "Mossberg Patriot": { make: "Mossberg", model: "Patriot", caliber: "6.5 Creedmoor" },
   "Pedersoli 1854": { make: "Pedersoli", model: "1854", caliber: "45-100" },
-  "Savage 110 270": { make: "Savage", model: "110", caliber: ".270" },
+  "Savage 110": { make: "Savage", model: "110", caliber: ".270" },
   "Ruger 10/22": { make: "Ruger", model: "10/22", caliber: ".22 LR" },
   "Anschutz 64": { make: "Anschutz", model: "64", caliber: ".22 LR" },
   "Rossi RS22": { make: "Rossi", model: "RS22", caliber: ".22 LR" },
   "Remington 783": { make: "Remington", model: "783", caliber: "6.5 Creedmoor" },
-  "Savage 110 308": { make: "Savage", model: "110", caliber: ".308" },
   "Savage Axis": { make: "Savage", model: "Axis", caliber: "6.5 Creedmoor" },
   "Remington 1100": { make: "Remington", model: "1100", caliber: "12 Gauge" },
   "Rock Island VR80": { make: "Rock Island", model: "VR80", caliber: "12 Gauge" },
@@ -211,6 +197,13 @@ const gunDetails: Record<string, { make: string; model: string; caliber: string 
   "Byrna CL": { make: "Byrna", model: "CL", caliber: ".61 Cal Less-Lethal" },
   "Byrna LE": { make: "Byrna", model: "LE", caliber: ".68 Cal Less-Lethal" },
   "Savage 23AA": { make: "Savage", model: "23AA", caliber: ".22 LR" },
+  "H&R 930": { make: "H&R", model: "930", caliber: ".22 LR" },
+  "Mossberg 715T": { make: "Mossberg", model: "715T", caliber: "22LR" },
+  "Silver Ruger 10/22": { make: "Silver Ruger", model: "10/22", caliber: ".22 LR" },
+  "Ruger Precision": { make: "Ruger", model: "Precision", caliber: "17 HMR" },
+  "Smith and Wesson SD9VE": { make: "Smith & Wesson", model: "SD9VE", caliber: "9mm" },
+  "Walther PDP": { make: "Walther", model: "PDP", caliber: "9mm" },
+
 };
 
 const getGunDetails = (name: string) => {
@@ -218,13 +211,13 @@ const getGunDetails = (name: string) => {
 };
 
 const upcomingEvent = {
-  title: "Mental Wellness Group",
-  date: "TBD",
-  time: "TBD",
+  title: "Root & Bloom Wellness Support Groups",
+  date: "May 27, 2026",
+  time: "3:00 PM - 4:00 PM",
   location: "Root and Bloom",
   address: "135 N Balsam St, Ridgecrest, CA 93555",
   rsvpUrl: "https://www.facebook.com/rootandbloomrc/",
-  flyerImage: "/Root and Bloom Flyer.jpg",
+  flyerImage: "/Messenger_creation_AB6D5BF7-A4D4-4808-8B10-2FF2117A0B85.jpeg",
 };
 
 function TnaArmoryWebsite() {
@@ -249,7 +242,7 @@ function TnaArmoryWebsite() {
   }, [page]);
 
   useEffect(() => {
-    const eventDate = new Date("2026-04-11T17:00:00");
+    const eventDate = new Date("2026-05-27T15:00:00");
 
     const updateCountdown = () => {
       const now = new Date();
@@ -442,7 +435,7 @@ function TnaArmoryWebsite() {
               <button type="button" onClick={() => openPage("event")} className="hover:text-white">Event</button>
               <button type="button" onClick={() => openPage("gallery")} className="hover:text-white">Gallery</button>
               <button type="button" onClick={() => openPage("services")} className="hover:text-white">Services</button>
-              <button type="button" onClick={() => openPage("reviews")} className="hover:text-white">Reviews</button>
+              <button type="button" onClick={() => openPage("Connect With Us!")} className="hover:text-white">Connect With Us!</button>
             </nav>
           </div>
 
@@ -455,7 +448,7 @@ function TnaArmoryWebsite() {
             <button type="button" onClick={() => openPage("event")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Event</button>
             <button type="button" onClick={() => openPage("gallery")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Gallery</button>
             <button type="button" onClick={() => openPage("services")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Services</button>
-            <button type="button" onClick={() => openPage("reviews")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Reviews</button>
+            <button type="button" onClick={() => openPage("Connect With Us!")} className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:text-white">Connect With Us!</button>
           </nav>
         </header>
 
@@ -698,22 +691,146 @@ function TnaArmoryWebsite() {
             </section>
           )}
 
-          {page === "reviews" && (
-            <section id="reviews" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-              <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:p-10">
-                <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Google Reviews</h2>
-                <div className="mt-8 grid gap-4 lg:grid-cols-3 sm:gap-6">
-                  {reviews.map((review) => (
-                    <div key={review.name} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                      <div className="text-lg text-[#efe2ae]">{"★".repeat(review.rating)}</div>
-                      <div className="mt-4 text-base leading-7 text-[#f1edde]">{review.text}</div>
-                      <div className="mt-5 text-sm font-black uppercase tracking-[0.08em] text-[#d7ddc7]">{review.name}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
+          {page === "Connect With Us!" && (
+  <section id="reviews" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#202c1c]/80 p-6 shadow-2xl shadow-black/30 sm:p-8 md:p-10">
+
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+            Reviews • Social • Contact
+          </div>
+
+          <h2 className="mt-2 text-4xl font-black uppercase tracking-[-0.05em] sm:text-5xl md:text-6xl">
+            Reviews & Links
+          </h2>
+        </div>
+
+        <div className="rounded-full border border-[#e6cf86]/20 bg-[#e6cf86]/10 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#f1d98d]">
+          Veteran Owned • Ridgecrest, CA
+        </div>
+      </div>
+
+      <div className="mt-7 rounded-2xl border border-[#e6cf86]/20 bg-[#10170f]/80 p-5">
+        <div className="text-xl font-black uppercase tracking-[0.08em] text-white">
+          Connect With T&A Armory
+        </div>
+
+        <p className="mt-2 max-w-3xl text-base leading-7 text-[#d5d9c2]">
+          Leave a review, follow our updates, get directions, or contact the shop directly.
+        </p>
+      </div>
+
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+        <a
+          href="https://share.google/nNr93rJ8ber1NCgrg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative overflow-hidden rounded-2xl border border-[#e6cf86]/30 bg-[#2b2616] p-6 transition hover:-translate-y-1 hover:border-[#e6cf86]/60 hover:shadow-[0_0_25px_rgba(230,207,134,0.35)]"
+        >
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,white,transparent_60%)]" />
+          <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent" />
+
+          <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+              alt="Google Reviews"
+              className="h-full w-full object-contain transition duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          <div className="relative z-10 mt-5 text-xl font-black uppercase tracking-[0.08em]">
+            Google Reviews
+          </div>
+
+          <div className="relative z-10 mt-2 text-sm leading-6 text-[#d5d9c2]">
+            Leave a review or find the shop on Google.
+          </div>
+        </a>
+
+        <a
+          href="https://www.yelp.com/biz/t-and-a-armory-ridgecrest?adjust_creative=microsoft&utm_campaign=yelp_feed&utm_medium=feed_v2&utm_source=microsoft&q=guns+%26+ammo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative overflow-hidden rounded-2xl border border-red-500/30 bg-[#2b1616] p-6 transition hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_25px_rgba(239,68,68,0.35)]"
+        >
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,white,transparent_60%)]" />
+          <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent" />
+
+          <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"
+              alt="Yelp"
+              className="h-full w-full object-contain transition duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          <div className="relative z-10 mt-5 text-xl font-black uppercase tracking-[0.08em]">
+            Yelp
+          </div>
+
+          <div className="relative z-10 mt-2 text-sm leading-6 text-[#d5d9c2]">
+            Help local customers discover T&A Armory.
+          </div>
+        </a>
+
+        <a
+          href="https://www.facebook.com/tnaarmory/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative overflow-hidden rounded-2xl border border-[#3b5998]/30 bg-[#1a2233] p-6 transition hover:-translate-y-1 hover:border-[#3b5998]/60 hover:shadow-[0_0_25px_rgba(59,89,152,0.35)]"
+        >
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,white,transparent_60%)]" />
+          <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent" />
+
+          <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+              alt="Facebook"
+              className="h-full w-full object-contain transition duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          <div className="relative z-10 mt-5 text-xl font-black uppercase tracking-[0.08em]">
+            Facebook
+          </div>
+
+          <div className="relative z-10 mt-2 text-sm leading-6 text-[#d5d9c2]">
+            Follow inventory, updates, and events.
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/tnaarmory"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative overflow-hidden rounded-2xl border border-pink-500/30 bg-[#24131e] p-6 transition hover:-translate-y-1 hover:border-pink-500/60 hover:shadow-[0_0_25px_rgba(236,72,153,0.35)]"
+        >
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,white,transparent_60%)]" />
+          <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent" />
+
+          <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+              alt="Instagram"
+              className="h-full w-full object-contain transition duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          <div className="relative z-10 mt-5 text-xl font-black uppercase tracking-[0.08em]">
+            Instagram
+          </div>
+
+          <div className="relative z-10 mt-2 text-sm leading-6 text-[#d5d9c2]">
+            Tactical content, gear, and shop photos.
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+)}
 
           {page === "event" && (
             <section id="event" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -920,46 +1037,130 @@ function TnaArmoryWebsite() {
             </section>
           )}
 
-          {page === "contact" && (
-            <section id="contact" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-              <div className="mx-auto grid max-w-7xl gap-6 rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 sm:p-8 md:grid-cols-[1.05fr_0.95fr] md:p-10">
-                <div>
-                  <h2 className="text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">Contact</h2>
-                  <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-                    <a href="tel:+17605901992" className="rounded-xl bg-[#e6cf86] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-black sm:px-6 sm:text-sm">Call Primary</a>
-                    <a href="mailto:info@tnaarmory.com" className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white sm:px-6 sm:text-sm">Email Us</a>
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                  <div className="space-y-4 text-[#f1edde]">
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Address</div>
-                      <div className="mt-1 text-lg font-black leading-7">
-                        {address.map((line) => (
-                          <div key={line}>{line}</div>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Primary Phone</div>
-                      <a href="tel:+17605901992" className="mt-1 block text-lg font-black">(760) 590-1992</a>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Secondary Phone</div>
-                      <a href="tel:+17605762578" className="mt-1 block text-lg font-black">(760) 576-2578</a>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">Email</div>
-                      <a href="mailto:info@tnaarmory.com" className="mt-1 block break-all text-lg font-black">info@tnaarmory.com</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
+          
         </main>
+         {page === "contact" && (
+  <section id="contact" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div className="relative mx-auto grid max-w-7xl gap-6 overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#202c1c]/70 p-6 shadow-2xl shadow-black/30 sm:p-8 md:grid-cols-[1.05fr_0.95fr] md:p-10">
 
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <img
+          src="/tna-armory-logo-web-transparent-removebg-preview.png"
+          alt="T&A Armory Background Logo"
+          className="w-[500px] max-w-[75%] object-contain opacity-[0.06]"
+        />
+      </div>
+
+      <div className="relative z-10">
+        <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+          Contact The Armory
+        </div>
+
+        <h2 className="mt-2 text-3xl font-black uppercase tracking-[-0.05em] sm:text-4xl md:text-5xl">
+          Contact
+        </h2>
+
+        <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#e6cf86]/20 bg-[#e6cf86]/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#f1d98d]">
+          <div className="h-2 w-2 animate-pulse rounded-full bg-[#e6cf86]" />
+          Veteran Owned • Ridgecrest, CA
+        </div>
+
+        <p className="mt-5 max-w-xl text-base leading-7 text-[#d5d9c2]">
+          Questions about firearms, transfers, gunsmith work, or current inventory?
+          Reach out and we’ll get back to you directly.
+        </p>
+
+        <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
+          <a
+            href="tel:+17605901992"
+            className="rounded-xl bg-[#e6cf86] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-black shadow-lg shadow-black/25 transition hover:brightness-110 hover:shadow-[0_0_18px_rgba(230,207,134,0.35)] sm:px-6 sm:text-sm"
+          >
+            Call Primary
+          </a>
+
+          <a
+            href="mailto:info@tnaarmory.com"
+            className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white transition hover:bg-white/15 hover:shadow-[0_0_18px_rgba(255,255,255,0.12)] sm:px-6 sm:text-sm"
+          >
+            Email Us
+          </a>
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-[#e6cf86]/20 bg-[#e6cf86]/10 p-5 backdrop-blur-sm">
+          <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#e6cf86]">
+            T&A Armory LLC
+          </div>
+
+          <div className="mt-2 text-2xl font-black uppercase tracking-[-0.04em] text-white">
+            Built With Grit. Ready For Action.
+          </div>
+        </div>
+      </div>
+
+      <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(48,62,41,0.95)_0%,rgba(16,21,14,0.98)_100%)] p-6 shadow-2xl shadow-black/30">
+
+        <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
+          <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:24px_24px]" />
+        </div>
+
+        <div className="relative space-y-5 text-[#f1edde]">
+
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/[0.08]">
+            <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">
+              Address
+            </div>
+
+            <div className="mt-2 text-lg font-black leading-7">
+              {address.map((line) => (
+                <div key={line}>{line}</div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/[0.08]">
+            <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">
+              Primary Phone
+            </div>
+
+            <a
+              href="tel:+17605901992"
+              className="mt-2 block text-2xl font-black text-[#e6cf86]"
+            >
+              (760) 590-1992
+            </a>
+          </div>
+
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/[0.08]">
+            <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">
+              Secondary Phone
+            </div>
+
+            <a
+              href="tel:+17605762578"
+              className="mt-2 block text-xl font-black"
+            >
+              (760) 576-2578
+            </a>
+          </div>
+
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/[0.08]">
+            <div className="text-xs font-bold uppercase tracking-[0.14em] text-[#d7ddc7]">
+              Email
+            </div>
+
+            <a
+              href="mailto:info@tnaarmory.com"
+              className="mt-2 block break-all text-xl font-black"
+            >
+              info@tnaarmory.com
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+)}
         <footer className="border-t border-white/10 bg-[#0f140d] px-4 py-10 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
             <div>
