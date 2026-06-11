@@ -113,20 +113,28 @@ const currentGunCategories = {
     { name: "Smith and Wesson Shield", price: "$300", image: "/SHIELD 40.png" },
     { name: "Walther PDP", price: "$800", image: "/pdp.png" },
     { name: "Smith and Wesson SD9VE", price: "$300", image: "/sd9ve.png" },
+    { name: "Rost Martin RM1S Range Kit", price: "$630", image: "Rost Martin Range Kit.png" },
+    { name: "Colt 1903", price: "$900", image: "Colt 1903.png" },
+    { name: "Sig Sauer P322", price: "$550", image: "Sig Sauer P322.png" },
+    { name: "Springfield Echelon Alpha", price: "$660", image: "Springfield Echelon Alpha.png" },
+    { name: "Springfield XD9", price: "$325", image: "Springfield XD9.png" },
+    { name: "Dickson Detective", price: "$300", image: "Dickson Detective.png" },
   ],
   Revolvers: [
     { name: "Ruger Service Six", price: "$650", image: "/service 6.png" },
     { name: "Ruger Single Six", price: "$430", image: "/single 6.png" },
     { name: "Smith and Wesson K22", price: "$712", image: "/k22.png" },
-    { name: "Taurus 856", price: "$450", image: "/856.png" },
+    { name: "Taurus 856", price: "Sold", image: "/856.png" },
     { name: "Smith and Wesson 35-1", price: "$1051", image: "/35-1.png" },
     { name: "H&R 930", price: "$230", image: "/H&R.png" },
+    { name: "Colt Frontier", price: "$650", image: "/Colt Frontier.png" },
+    { name: "Smith & Wesson Victory", price: "$900", image: "/Smith & Wesson Victory.png" },
   ],
   Rifles: [
     { name: "PSA AR-15", price: "Sold", image: "/PSA.png" },
     { name: "Savage 334", price: "$650", image: "/334.png" },
     { name: "Mossberg Patriot", price: "$500", image: "/patriot.png" },
-    { name: "Pedersoli 1854", price: "$1650", image: "/1873.png" },
+    { name: "Pedersoli 1854", price: "Sold", image: "/1873.png" },
     { name: "Savage 110", price: "$570", image: "/110.png" },
     { name: "Ruger 10/22", price: "$400", image: "/1022.png" },
     { name: "Anschutz 64", price: "$950", image: "/64.png" },
@@ -135,7 +143,8 @@ const currentGunCategories = {
     { name: "Savage Axis", price: "$500", image: "/axis.png" },
     { name: "Ruger Precision", price: "$500", image: "/precision.png" },
     { name: "Remington 783", price: "$500", image: "/remington 783.png" },
-    { name: "Silver Ruger 10/22", price: "$400", image: "/silver 1022.png" },
+    { name: "silver Ruger 10/22", price: "$400", image: "/silver 1022.png" },
+    
   ],
   Shotguns: [
     { name: "Remington 1100", price: "$720", image: "/1100.png" },
@@ -203,6 +212,14 @@ const gunDetails: Record<string, { make: string; model: string; caliber: string 
   "Ruger Precision": { make: "Ruger", model: "Precision", caliber: "17 HMR" },
   "Smith and Wesson SD9VE": { make: "Smith & Wesson", model: "SD9VE", caliber: "9mm" },
   "Walther PDP": { make: "Walther", model: "PDP", caliber: "9mm" },
+  "Rost Martin RM1S Range Kit": { make: "Rost Martin", model: "RM1S Range Kit", caliber: "9mm" },
+  "Colt 1903": { make: "Colt", model: "1903", caliber: ".32 ACP" },
+  "Sig Sauer P322": { make: "Sig Sauer", model: "P322", caliber: ".22 LR" },
+  "Springfield Echelon Alpha": { make: "Springfield", model: "Echelon Alpha", caliber: "9mm" },
+  "Springfield XD9": { make: "Springfield", model: "XD9", caliber: "9mm" },
+  "Dickson Detective": { make: "Dickson", model: "Detective", caliber: ".25 Auto" },
+  "Colt Frontier": { make: "Colt", model: "Frontier", caliber: ".22 LR" },
+  "Smith & Wesson Victory": { make: "Smith & Wesson", model: "Victory", caliber: ".38 SPC" },
 
 };
 
@@ -212,12 +229,12 @@ const getGunDetails = (name: string) => {
 
 const upcomingEvent = {
   title: "Root & Bloom Wellness Support Groups",
-  date: "May 27, 2026",
-  time: "3:00 PM - 4:00 PM",
+  date: "june 7-14, 2026",
+  time: "TBD",
   location: "Root and Bloom",
   address: "135 N Balsam St, Ridgecrest, CA 93555",
   rsvpUrl: "https://www.facebook.com/rootandbloomrc/",
-  flyerImage: "/Messenger_creation_AB6D5BF7-A4D4-4808-8B10-2FF2117A0B85.jpeg",
+  flyerImage: "/june root and bloom.jpg",
 };
 
 function TnaArmoryWebsite() {
