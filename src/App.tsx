@@ -85,7 +85,7 @@ const merch = [
   },
   {
     name: "Shirts",
-    image: "/Shirts.png",
+    image: "/Shop models college.png",
   },
   {
     name: "Beenies",
@@ -139,7 +139,7 @@ const currentGunCategories = {
     { name: "Ruger 10/22", price: "$400", image: "/1022.png" },
     { name: "Anschutz 64", price: "$950", image: "/64.png" },
     { name: "Savage 23AA", price: "$350", image: "/23aa.png" },
-    { name: "Mossberg 715T", price: "$250", image: "/715T.png" },
+    { name: "Mossberg 715T", price: "SOLD", image: "/715T.png" },
     { name: "Savage Axis", price: "$500", image: "/axis.png" },
     { name: "Ruger Precision", price: "$500", image: "/precision.png" },
     { name: "Remington 783", price: "$500", image: "/remington 783.png" },
