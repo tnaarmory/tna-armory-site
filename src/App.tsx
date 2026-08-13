@@ -98,7 +98,7 @@ const merch = [
 ];
 
 const hours = [
-  "Monday – Friday: 4:30 PM – 8:00 PM",
+  "Monday – Friday: 5:00 PM – 8:00 PM",
   "Flex Friday: 9:00 AM – 6:00 PM",
   "Saturday: 9:00 AM – 6:00 PM",
 ];
@@ -109,19 +109,25 @@ const currentGunCategories = {
   Handguns: [
     { name: "Rost Martin RM1S", price: "$500", image: "/rm1s.png" },
     { name: "Canik MC9 Prime", price: "$700", image: "/prime.png" },
-    { name: "Ruger SR22", price: "$580", image: "/SR22.png" },
+    { name: "Glock 27 Gen 3", price: "$1,000", image: "/Glock 27 Gen 3 (2).png" },
     { name: "Smith and Wesson Shield", price: "$300", image: "/SHIELD 40.png" },
     { name: "Walther PDP", price: "$800", image: "/pdp.png" },
-    { name: "Smith and Wesson SD9VE", price: "$300", image: "/sd9ve.png" },
-    { name: "Rost Martin RM1S Range Kit", price: "$630", image: "Rost Martin Range Kit.png" },
-    { name: "Colt 1903", price: "$900", image: "Colt 1903.png" },
-    { name: "Sig Sauer P322", price: "$550", image: "Sig Sauer P322.png" },
-    { name: "Springfield Echelon Alpha", price: "$660", image: "Springfield Echelon Alpha.png" },
-    { name: "Springfield XD9", price: "$325", image: "Springfield XD9.png" },
-    { name: "Dickson Detective", price: "$300", image: "Dickson Detective.png" },
+    { name: "Glock 22 Gen 3", price: "$800", image: "/Glock 22 Gen 3.png" },
+    { name: "Colt 1903", price: "$900", image: "/Colt 1903.png" },
+    { name: "TAURUS GX2", price: "$550", image: "/TAURUS GX2.png" },
+    { name: "Springfield Echelon Alpha", price: "$660", image: "/Springfield Echelon Alpha.png" },
+    { name: "Springfield XD9", price: "$385", image: "/Springfield XD9.png" },
+    { name: "Smith & Wesson 2.0 10mm", price: "$800", image: "/Smith & Wesson 2.0 10mm.png" },
+    { name: "Glock 21 Gen 4", price: "$1,700", image: "/Glock 21 Gen 4.png" },
+     { name: "Smith and Wesson Shield 9MM", price: "$300", image: "/SHIELD 40.png" },
+     { name: "Smith and Wesson 4006", price: "$650", image: "/SMITH & WESSON 4006.png" },
+
   ],
+
+  
+
   Revolvers: [
-    { name: "Ruger Service Six", price: "$650", image: "/service 6.png" },
+    { name: "Ruger Service Six", price: "$SOLD", image: "/service 6.png" },
     { name: "Ruger Single Six", price: "$430", image: "/single 6.png" },
     { name: "Smith and Wesson K22", price: "$712", image: "/k22.png" },
     { name: "Taurus 856", price: "Sold", image: "/856.png" },
@@ -131,7 +137,7 @@ const currentGunCategories = {
     { name: "Smith & Wesson Victory", price: "$900", image: "/Smith & Wesson Victory.png" },
   ],
   Rifles: [
-    { name: "PSA AR-15", price: "Sold", image: "/PSA.png" },
+    { name: "STAG ARMS", price: "$655", image: "/STAG ARMS.png" },
     { name: "Savage 334", price: "$650", image: "/334.png" },
     { name: "Mossberg Patriot", price: "$500", image: "/patriot.png" },
     { name: "Pedersoli 1854", price: "Sold", image: "/1873.png" },
@@ -139,9 +145,7 @@ const currentGunCategories = {
     { name: "Ruger 10/22", price: "$400", image: "/1022.png" },
     { name: "Anschutz 64", price: "$950", image: "/64.png" },
     { name: "Savage 23AA", price: "$350", image: "/23aa.png" },
-    { name: "Mossberg 715T", price: "SOLD", image: "/715T.png" },
     { name: "Savage Axis", price: "$500", image: "/axis.png" },
-    { name: "Ruger Precision", price: "$500", image: "/precision.png" },
     { name: "Remington 783", price: "$500", image: "/remington 783.png" },
     { name: "silver Ruger 10/22", price: "$400", image: "/silver 1022.png" },
     
@@ -220,8 +224,18 @@ const gunDetails: Record<string, { make: string; model: string; caliber: string 
   "Dickson Detective": { make: "Dickson", model: "Detective", caliber: ".25 Auto" },
   "Colt Frontier": { make: "Colt", model: "Frontier", caliber: ".22 LR" },
   "Smith & Wesson Victory": { make: "Smith & Wesson", model: "Victory", caliber: ".38 SPC" },
-
+  "Smith & Wesson 4006": { make: "Smith & Wesson", model: "4006", caliber: ".40 S&W" },
+  "Smith & Wesson M&P SHIELD": { make: "Smith & Wesson", model: "M&P SHIELD", caliber: "9mm" },
+  "Smith & Wesson M&P 2.0 10mm": { make: "Smith & Wesson", model: "M&P 2.0 10mm", caliber: "10mm" },
+  "Springfield Armory XD": { make: "Springfield", model: "XD", caliber: "9mm" },
+  "STAG ARMS": { make: "STAG", model: "ARMS", caliber: "5.56mm" },
+  "GLOCK 21 GEN4": { make: "GLOCK", model: "21 GEN4", caliber: "9mm" },
+  "GLOCK 22 GEN3": { make: "GLOCK", model: "22 GEN3", caliber: "9mm" },
+  "GLOCK 27 GEN3": { make: "GLOCK", model: "27 GEN3", caliber: "9mm" },
+  "TAURUS GX2": { make: "TAURUS", model: "GX2", caliber: "9mm" },
+  
 };
+
 
 const getGunDetails = (name: string) => {
   return gunDetails[name] ?? { make: "Call for details", model: name, caliber: "Call for caliber" };
