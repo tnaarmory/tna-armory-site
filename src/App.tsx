@@ -108,19 +108,19 @@ const address = ["1615 N Down Suite B", "Ridgecrest, CA 93555"];
 const currentGunCategories = {
   Handguns: [
     { name: "Rost Martin RM1S", price: "$500", image: "/rm1s.png" },
-    { name: "Canik MC9 Prime", price: "$700", image: "/prime.png" },
-    { name: "Glock 27 Gen 3", price: "$1,000", image: "/Glock 27 Gen 3 (2).png" },
+    { name: "Canik MC9 Prime", price: "SOLD", image: "/prime.png" },
+    { name: "Glock 27 Gen 3", price: "SOLD", image: "/Glock 27 Gen 3 (2).png" },
     { name: "Smith and Wesson Shield", price: "$300", image: "/SHIELD 40.png" },
     { name: "Walther PDP", price: "$800", image: "/pdp.png" },
     { name: "Glock 22 Gen 3", price: "$800", image: "/Glock 22 Gen 3.png" },
     { name: "Colt 1903", price: "$900", image: "/Colt 1903.png" },
-    { name: "TAURUS GX2", price: "$550", image: "/TAURUS GX2.png" },
+    { name: "TAURUS GX2", price: "$350", image: "/TAURUS GX2.png" },
     { name: "Springfield Echelon Alpha", price: "$660", image: "/Springfield Echelon Alpha.png" },
-    { name: "Springfield XD9", price: "$385", image: "/Springfield XD9.png" },
-    { name: "Smith & Wesson 2.0 10mm", price: "$800", image: "/Smith & Wesson 2.0 10mm.png" },
+    { name: "Springfield XD9", price: "", image: "/Springfield XD9.png" },
+    { name: "Smith & Wesson 2.0 10mm", price: "SOLD", image: "/Smith & Wesson 2.0 10mm.png" },
     { name: "Glock 21 Gen 4", price: "$1,700", image: "/Glock 21 Gen 4.png" },
-     { name: "Smith and Wesson Shield 9MM", price: "$300", image: "/SHIELD 40.png" },
-     { name: "Smith and Wesson 4006", price: "$650", image: "/SMITH & WESSON 4006.png" },
+     { name: "Smith and Wesson Shield 9MM", price: "SOLD", image: "/SHIELD 40.png" },
+     { name: "Smith and Wesson 4006", price: "SOLD", image: "/SMITH & WESSON 4006.png" },
 
   ],
 
@@ -137,7 +137,7 @@ const currentGunCategories = {
     { name: "Smith & Wesson Victory", price: "$900", image: "/Smith & Wesson Victory.png" },
   ],
   Rifles: [
-    { name: "STAG ARMS", price: "$655", image: "/STAG ARMS.png" },
+    { name: "STAG ARMS", price: "SOLD", image: "/STAG ARMS.png" },
     { name: "Savage 334", price: "$650", image: "/334.png" },
     { name: "Mossberg Patriot", price: "$500", image: "/patriot.png" },
     { name: "Pedersoli 1854", price: "Sold", image: "/1873.png" },
@@ -147,7 +147,7 @@ const currentGunCategories = {
     { name: "Savage 23AA", price: "$350", image: "/23aa.png" },
     { name: "Savage Axis", price: "$500", image: "/axis.png" },
     { name: "Remington 783", price: "$500", image: "/remington 783.png" },
-    { name: "silver Ruger 10/22", price: "$400", image: "/silver 1022.png" },
+    { name: "silver Ruger 10/22", price: "SOLD", image: "/silver 1022.png" },
     
   ],
   Shotguns: [
